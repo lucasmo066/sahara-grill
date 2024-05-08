@@ -9,7 +9,6 @@ export default function Navbar() {
         <header className="border-4">
           <nav className="flex flex-row justify-center">
             <ul className="flex items-center justify-center gap-4 py-10">
-            
               <div className="flex items-center text-primary text-center text-md sm:text-lg lg:text-xl justify-center font-mono gap-2 sm:gap-10">
                 <li>
                   <a href="/">Home</a>
