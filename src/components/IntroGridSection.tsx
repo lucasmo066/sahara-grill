@@ -1,4 +1,3 @@
-// IntroGridSection
 import { LayoutGridCards } from '@/components/LayoutGrid';
 
 export default function IntroGridSection() {
