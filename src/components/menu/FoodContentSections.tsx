@@ -17,7 +17,7 @@ interface FoodContentSectionsProps {
 const FoodContentSections: React.FC<FoodContentSectionsProps> = ({ title, sectionDescription, imageUrl, menuItems }) => {
   return (
     <div className="border-b border-dotted border-neutral-600 pb-8 pt-6">
-      <h2 className="text-3xl font-medium mb-2 text-start">{title}</h2>
+      <h2 className="text-3xl font-semibold mb-2 text-start">{title}</h2>
         <p className="text-neutral-400 text-md font-light mb-6">{sectionDescription}</p>
       <div className="flex">
         {imageUrl && (
