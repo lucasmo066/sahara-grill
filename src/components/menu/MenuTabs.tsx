@@ -14,7 +14,7 @@ const MenuTabs = () => {
 
   return (
     <Tabs value={activeTab} onValueChange={handleTabChange} className="w-[1000px]">
-      <div className="border-b rounded-l-lg mb-10">
+      <div className="border-b rounded-l-lg mb-5">
         <TabsList>
           <TabsTrigger value="food">Food</TabsTrigger>
           <TabsTrigger value="drinks">Drinks</TabsTrigger>
