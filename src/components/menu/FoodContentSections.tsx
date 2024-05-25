@@ -21,13 +21,20 @@ const FoodContentSections: React.FC<FoodContentSectionsProps> = ({ title, sectio
     <div className="border-b border-dotted border-neutral-600 pb-8 pt-6">
       <h2 className="text-3xl font-semibold mb-2 text-start">{title}</h2>
       {sectionDescription && <p className="text-neutral-400 text-md font-light mb-6">{sectionDescription}</p>}
-      <div className={classNames("flex flex-col md:flex-row", { "md:flex-row-reverse": variant === 'right' })}>
+      <div className={classNames("flex flex-col md:flex-row md:items-center", { "md:flex-row-reverse": variant === 'right' })}>
         {imageUrl && (
-          <div className="w-full md:w-1/2 mb-4 md:mb-0">
-            <Image src={imageUrl} alt={title} layout="responsive" width={200} height={200} className="rounded-3xl border border-neutral-800" />
+          <div className="w-full md:w-1/2 mb-4 md:mb-0 md:h-auto">
+            <Image
+              src={imageUrl}
+              alt={title}
+              layout="responsive"
+              width={400}
+              height={300}
+              className="rounded-3xl border border-neutral-800 object-cover"
+            />
           </div>
         )}
-        <div className={`w-full md:w-${imageUrl ? '1/2' : 'full'} px-8`}>
+        <div className={`w-full md:w-${imageUrl ? '1/2' : 'full'} px-2 md:px-8`}>
           <ul className="pl-6 py-4">
             {menuItems.map((item, index) => (
               <li key={index} className="mb-3">

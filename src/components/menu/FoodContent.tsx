@@ -2,7 +2,7 @@ import FoodContentSections from "@/components/menu/FoodContentSections";
 
 const FoodContent = () => {
   return (
-    <div>
+    <div className="">
       <FoodContentSections
         title= "Appetizers"
         sectionDescription= "Mezza before the main entree"
