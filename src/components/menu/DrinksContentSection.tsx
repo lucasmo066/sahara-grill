@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import classNames from "classnames";
 
+
 interface MenuItem {
   name: string;
   price: string;
@@ -19,11 +20,11 @@ interface DrinksContentSectionsProps {
 const FoodContentSections: React.FC<DrinksContentSectionsProps> = ({ title, sectionDescription, imageUrl, menuItems, variant }) => {
   return (
     <div className="border-b border-dotted border-neutral-600 pb-8 pt-6">
-      <h2 className="text-3xl font-semibold mb-2 text-start">{title}</h2>
+      <h2 className="aladin-regular text-3xl md:text-4xl font-semibold mb-2 text-start">{title}</h2>
       {sectionDescription && <p className="text-neutral-400 text-md font-light mb-6">{sectionDescription}</p>}
       <div className={classNames("flex flex-col md:flex-row md:items-center", { "md:flex-row-reverse": variant === 'right' })}>
         {imageUrl && (
-          <div className="w-full md:w-1/2 mb-4 md:mb-0 md:h-auto">
+          <div className="w-full md:w-1/2 my-4 md:mb-0 md:h-auto">
             <Image
               src={imageUrl}
               alt={title}
