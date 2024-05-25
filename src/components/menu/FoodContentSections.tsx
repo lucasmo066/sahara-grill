@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import classNames from "classnames";
 
 interface MenuItem {
   name: string;
@@ -12,20 +13,21 @@ interface FoodContentSectionsProps {
   sectionDescription?: string;
   imageUrl?: string;
   menuItems: MenuItem[];
+  variant: 'left' | 'right';
 }
 
-const FoodContentSections: React.FC<FoodContentSectionsProps> = ({ title, sectionDescription, imageUrl, menuItems }) => {
+const FoodContentSections: React.FC<FoodContentSectionsProps> = ({ title, sectionDescription, imageUrl, menuItems, variant }) => {
   return (
     <div className="border-b border-dotted border-neutral-600 pb-8 pt-6">
       <h2 className="text-3xl font-semibold mb-2 text-start">{title}</h2>
-        <p className="text-neutral-400 text-md font-light mb-6">{sectionDescription}</p>
-      <div className="flex">
+      {sectionDescription && <p className="text-neutral-400 text-md font-light mb-6">{sectionDescription}</p>}
+      <div className={classNames("flex flex-col md:flex-row", { "md:flex-row-reverse": variant === 'right' })}>
         {imageUrl && (
-          <div className="w-1/2">
+          <div className="w-full md:w-1/2 mb-4 md:mb-0">
             <Image src={imageUrl} alt={title} layout="responsive" width={200} height={200} className="rounded-3xl border border-neutral-800" />
           </div>
         )}
-        <div className={`w-${imageUrl ? '1/2' : 'full'} px-8`}>
+        <div className={`w-full md:w-${imageUrl ? '1/2' : 'full'} px-8`}>
           <ul className="pl-6 py-4">
             {menuItems.map((item, index) => (
               <li key={index} className="mb-3">

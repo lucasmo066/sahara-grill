@@ -24,7 +24,7 @@ export function Hero() {
         }}
         className="z-50 flex flex-col justify-center items-center"
       >
-        <motion.h1 className="font-bold text-xl md:text-6xl text-center bg-clip-text text-transparent bg-gradient-to-b from-red-800 to-red-600 py-4">
+        <motion.h1 className="font-bold text-4xl md:text-6xl text-center bg-clip-text text-transparent bg-gradient-to-b from-red-800 to-red-600 py-4">
           The Sahara Grill
         </motion.h1>
         <motion.p

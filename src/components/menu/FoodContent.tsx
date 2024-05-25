@@ -4,9 +4,9 @@ const FoodContent = () => {
   return (
     <div>
       <FoodContentSections
-        title="Appetizers"
-        sectionDescription="Mezza before the main entree"
-        imageUrl="/menu/hummuspita.JPG"
+        title= "Appetizers"
+        sectionDescription= "Mezza before the main entree"
+        imageUrl= "/menu/hummuspita.JPG"
         menuItems={[
           { name: "Hummus & Pita", price: "$5.00", description: "Creamy hummus served with warm pita bread" },
           { name: "Baba Ghanoush & Pita", price: "$5.00", description: "Smoky eggplant dip served with pita bread" },
@@ -15,6 +15,7 @@ const FoodContent = () => {
           { name: "Dolmas", price: "$5.00", description: "Stuffed grape leaves with rice and herbs" },
           { name: "Greek Potatoes", price: "$5.00", description: "Oven-roasted potatoes with herbs and spices" }
         ]}
+        variant= "left"
       />
         <FoodContentSections
             title= "Salads"
@@ -25,6 +26,7 @@ const FoodContent = () => {
             { name: "Sahara Salad", price: "$6.00", description: "" },
             { name: "House Salad", price: "$6.00", description: "" },
             ]}
+            variant= "left"
         />     
         <FoodContentSections
             title= "Salad Plates"
@@ -35,6 +37,7 @@ const FoodContent = () => {
             { name: "Three Item Salad Plate", price: "$9.00", description: "" },
             { name: "Four Item Salad Plate", price: "$10.00", description: "" },
             ]}
+            variant= "right"
         /> 
         <FoodContentSections
             title= "Soups"
@@ -43,6 +46,7 @@ const FoodContent = () => {
                 { name: "Lentil Soup", price: "$4.00", description: "Lentils, onions, and spice" },
                 { name: "Soup and Small Salad", price: "$8.00", description: "" },
             ]}
+            variant= "left"
         />
         <FoodContentSections
             title="Wraps"
@@ -56,6 +60,7 @@ const FoodContent = () => {
                 {name: "Chicken Shawarma Wrap", price: "$8.00", description: "Chicken Shawarma, Garlic Paste, Pickles, and Tomatoes"},
                 {name: "Grilled Veggie Wrap", price: "$8.00", description: "Hummus, Lettuce, Tomatoes, but has a choice of Tahini or Tzatziki Sauce."},
             ]}
+            variant= "right"
         />
         <FoodContentSections
             title= "Wrap Specials"
@@ -64,8 +69,8 @@ const FoodContent = () => {
                 { name: "Any Wrap with a side Fries or House Salad with a choice of Fountain Drink", price: "$10.00", description: "" },
                 { name: "Any Wrap with a choice of 2 sides and a choice of Fountain Drink", price: "$11.00", description: "" },
                 { name: "Make it a Plate served on Rice with salad", price: "$12.00", description: "Choice of one of these variety of meats to be put into a platter" },
-
             ]}
+            variant= "left"
         />
         <FoodContentSections
             title= "Off the Grill Kabobs"
@@ -79,6 +84,7 @@ const FoodContent = () => {
                 { name: "Veggie Kabob", price: "$18.00", description: "Marinated veggies skewered and grilled" },
                 { name: "Rack of Lamb", price: "$29.00", description: "Marinated lamb chops grilled to perfection" },
             ]}
+            variant= "left"
         />
         <FoodContentSections
             title= "House Specialties"
@@ -90,6 +96,7 @@ const FoodContent = () => {
                 { name: "Ultimate Meat Platter", price: "$18.00", description: "Three types of meats which are Gyro, Grill Chicken, and kofta that is served with rice, hummus, and Pita bread" },
                 { name: "Sahara Signature Dish", price: "$25.00", description: "Four types of meats which are gyro meat, grilled chicken, beef skewer, and a kofta skewer that is served with rice, house salad, hummus, and pita bread" },
             ]}
+            variant= "right"
         />
         <FoodContentSections
             title= "Extra Meats"
@@ -102,6 +109,7 @@ const FoodContent = () => {
                 { name: "Chicken Skewer", price: "$5.00", description: "" },
                 { name: "Veggie Skewer", price: "$4.50", description: "" },
             ]}
+            variant= "left"
         />
         <FoodContentSections
             title= "Kids"
@@ -115,6 +123,7 @@ const FoodContent = () => {
                 { name: "Kids Beef Kabob", price: "$9.00", description: "" },
                 { name: "Kids Lamb Kabob", price: "$9.00", description: "" },
             ]}
+            variant= "right"
         />
         <FoodContentSections
             title= "Desserts"
@@ -124,7 +133,8 @@ const FoodContent = () => {
                 { name: "Baklava", price: "$4.00", description: "" },
                 { name: "Woodstock Cream Pie", price: "$5.00", description: "" },
                 { name: "Chocolate Cake", price: "$6.00", description: "" },
-            ]}        
+            ]} 
+            variant= "left"       
         />
     </div>
   );
