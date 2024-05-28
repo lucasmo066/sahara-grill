@@ -71,7 +71,7 @@ const DrinksContent = () => {
   return (
     <div>
       {sections.map((section, index) => (
-        <SectionWithAnimation key={index} section={section} delay={index * 0.3} />
+        <SectionWithAnimation key={index} section={section} delay={index * 0.2} />
       ))}
     </div>
   );

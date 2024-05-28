@@ -20,12 +20,18 @@ export function LayoutGridCards() {
 
 const SkeletonOne = () => {
   return (
-    <div>
-      <p className="font-bold text-4xl text-white">House in the woods</p>
-      <p className="font-normal text-base text-white"></p>
+    <div className="flex flex-col items-center border  text-center">
+      <p className="font-bold text-4xl text-white">Hours</p>
+      <p className="font-normal text-base text-white">Join us for lunch and dinner daily</p>
       <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        A serene and tranquil retreat, this house in the woods offers a peaceful
-        escape from the hustle and bustle of city life.
+       <br />
+      Monday - Thursday
+      11:00 AM - 8:30 PM
+        <br />
+      Friday - Saturday
+      11:00 AM - 9:00 PM
+        <br />
+      Sunday: Closed
       </p>
     </div>
   );
@@ -75,7 +81,7 @@ const cards: Cards[] = [
     content: <SkeletonOne />,
     className: "md:col-span-2",
     thumbnail:
-      "/arabicdarkbg.svg",
+      "/menu/outsideside.JPG",
   },
   {
     id: 2,
