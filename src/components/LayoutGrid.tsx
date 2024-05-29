@@ -12,7 +12,7 @@ export interface Cards {
 
 export function LayoutGridCards() {
   return (
-    <div className="h-screen py-20 w-full">
+    <div className="h-screen py-10 w-full">
       <LayoutGrid cards={cards} />
     </div>
   );
@@ -20,32 +20,25 @@ export function LayoutGridCards() {
 
 const SkeletonOne = () => {
   return (
-    <div className="flex flex-col items-center border  text-center">
-      <p className="font-bold text-4xl text-white">Hours</p>
-      <p className="font-normal text-base text-white">Join us for lunch and dinner daily</p>
-      <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-       <br />
-      Monday - Thursday
-      11:00 AM - 8:30 PM
-        <br />
-      Friday - Saturday
-      11:00 AM - 9:00 PM
-        <br />
-      Sunday: Closed
+    <div>
+      <p className="font-bold text-4xl text-white">Family Owned and Operated</p>
+      <p className="font-normal text-lg my-4 max-w-lg text-neutral-300">
+        We are a family-owned and operated business that has been serving the
+        community for over a decade. Our goal is to provide our customers with
+        the best possible service and quality products at an affordable price.
       </p>
     </div>
   );
 };
-
+ 
 const SkeletonTwo = () => {
   return (
     <div>
-      <p className="font-bold text-4xl text-white">House above the clouds</p>
-      <p className="font-normal text-base text-white"></p>
-      <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        Perched high above the world, this house offers breathtaking views and a
-        unique living experience. It&apos;s a place where the sky meets home,
-        and tranquility is a way of life.
+      <p className="font-bold text-4xl text-white">Prepared Fresh</p>
+      <p className="font-normal text-lg my-4 max-w-lg text-neutral-200">
+        All of our dishes are prepared fresh daily using only the finest
+        ingredients. We take pride in the quality of our food and strive to
+        provide our customers with the best possible dining experience.
       </p>
     </div>
   );
@@ -53,11 +46,11 @@ const SkeletonTwo = () => {
 const SkeletonThree = () => {
   return (
     <div>
-      <p className="font-bold text-4xl text-white">Greens all over</p>
-      <p className="font-normal text-base text-white"></p>
-      <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        A house surrounded by greenery and nature&apos;s beauty. It&apos;s the
-        perfect place to relax, unwind, and enjoy life.
+      <p className="font-bold text-4xl text-white">Authentic Mediterranean</p>
+      <p className="font-normal text-lg my-4 max-w-lg text-neutral-200">
+        Our menu features a wide variety of authentic Mediterranean dishes that
+        are sure to satisfy even the most discerning palate. From our delicious
+        kebabs to our mouth-watering baklava, we have something for everyone.
       </p>
     </div>
   );
@@ -65,17 +58,17 @@ const SkeletonThree = () => {
 const SkeletonFour = () => {
   return (
     <div>
-      <p className="font-bold text-4xl text-white">Rivers are serene</p>
-      <p className="font-normal text-base text-white"></p>
+      <p className="font-bold text-4xl text-white">Friendly Serivce</p>
       <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        A house by the river is a place of peace and tranquility. It&apos;s the
-        perfect place to relax, unwind, and enjoy life.
+        Our friendly and knowledgeable staff is always ready to help you find
+        the perfect dish to suit your tastes. Whether you are a regular or a
+        first-time visitor, we will make you feel right at home.
       </p>
     </div>
   );
 };
-
-const cards: Cards[] = [
+ 
+const cards = [
   {
     id: 1,
     content: <SkeletonOne />,
@@ -88,20 +81,20 @@ const cards: Cards[] = [
     content: <SkeletonTwo />,
     className: "col-span-1",
     thumbnail:
-      "/arabicdarkbg.svg",
+      "/menu/kuftalambchickenlampgreen.JPG",
   },
   {
     id: 3,
     content: <SkeletonThree />,
     className: "col-span-1",
     thumbnail:
-      "/arabicdarkbg.svg",
+      "/menu/plattertop.JPG",
   },
   {
     id: 4,
     content: <SkeletonFour />,
     className: "md:col-span-2",
     thumbnail:
-      "/arabicdarkbg.svg",
+      "/menu/ambiancelamp.JPG",
   },
 ];

@@ -10,12 +10,8 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center text-center">
       <Hero />
       <GotchaBoard />
-    
       <TestimonialsSection />
       <IntroGridSection />
-      <div className="flex border-4 border-green-500 w-full">
-        footer
-      </div>
     </main>
   );
 }
