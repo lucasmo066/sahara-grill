@@ -49,8 +49,8 @@ const GotchaBoard = () => {
         <h2 className="aladin-regular text-start text-9xl font-medium mb-10 bg-clip-text text-transparent bg-gradient-to-b from-red-600 to-red-950">
           What&apos;s New
         </h2>
-        <div className=" h-[30rem] grid grid-cols-1 md:grid-cols-1 gap-4">
-            <div className="col-span-1 border-2 border-black">
+        <div className=" h-[30rem] grid grid-cols-1 gap-4">
+            <div className="col-span-1">
                <Image 
                 src="/dailyspecials.png"
                 alt="Sahara Grill has Daily Specials on Wraps and Plates"
@@ -59,9 +59,9 @@ const GotchaBoard = () => {
                 className=" object-fill h-[30rem] w-[40rem]"
                 />
             </div>
-            <div className="col-span-1">
-                <h3 className="text-5xl font-semibold text-center mb-4">Get the Latest</h3>
-                <p className="text-center text-xl font-light mb-4">Sign up with your email to receive exclusive news + events for The Sahara Grill.</p>
+            <div className="col-span-1 mt-10">
+                <h3 className="text-5xl font-extrabold text-center mb-4">Get the Latest</h3>
+                <p className="text-center text-xl font-light mb-6">Sign up with your email to receive exclusive news + events for The Sahara Grill.</p>
                 <input type="text" placeholder="Enter your email" className="border-2 rounded-2xl p-2 m-2 mb-4" />
                 <Button className="text-white px-14 py-4">Sign Up</Button>
             </div>

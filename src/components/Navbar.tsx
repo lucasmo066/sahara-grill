@@ -2,34 +2,69 @@
 
 import ModeToggle from "@/components/ui/toggle-mode"
 import { Button } from "./ui/button"
+import Image from 'next/image'
+import Link from 'next/link'
 
 
 export default function Navbar() {
     return (
-        <header className="border-4">
-          <nav className="flex flex-row justify-center">
-            <ul className="flex items-center justify-center gap-4 py-10">
+        <header className="">
+          <nav className="flex flex-row justify-evenly">
+            <ul className="flex items-center justify-center gap-4 py-6">
               <div className="flex items-center text-primary text-center text-md sm:text-lg lg:text-xl justify-center font-mono gap-2 sm:gap-10">
                 <li>
-                  <a href="/">Home</a>
+                  <Link href="/">
+                    <Image
+                      src="/navigation/home.png"
+                      alt="logo"
+                      width={100}
+                      height={100}
+                    />
+                  </Link>
                 </li>
                 <li>
-                  <a href="/menu">Menu</a>
+                <Link href="/menu">
+                    <Image
+                      src="/navigation/Menu.png"
+                      alt="logo"
+                      width={100}
+                      height={100}
+                    />
+                  </Link>
                 </li>
                 <li>
-                  <a href="">Catering & Events</a>
+                <Link href="/about">
+                    <Image
+                      src="/navigation/about.png"
+                      alt="logo"
+                      width={100}
+                      height={100}
+                    />
+                  </Link>
                 </li>
                 <li>
-                  <a href="#contact">About Us</a>
+                <Link href="#catering">
+                    <Image
+                      src="/navigation/privateEvents.png"
+                      alt="logo"
+                      width={100}
+                      height={100}
+                    />
+                  </Link>
                 </li>
               </div>
-              <li>
-                <ModeToggle />
-              </li>
+            
+               
+              
             </ul>
-            <div className="flex flex-row items-center justify-end">
-                <Button variant="outline" className="border-2 border-primary text-primary my-10">Delivery</Button>
-                <Button variant="outline" className="border-2 border-primary text-primary my-10">Takeout</Button>
+            <div className="flex flex-row items-center justify-center gap-4">
+                <ModeToggle />
+                <Link href="tel:470-787-2200">
+                <Button variant="outline" className="border-2 border-primary text-primary px-10 my-10">Delivery</Button>
+                </Link>
+                <Link href="/order">
+                <Button variant="outline" className="border-2 border-primary text-primary px-10 my-10">Takeout</Button>
+                </Link>
             </div>
           </nav>
         </header>
