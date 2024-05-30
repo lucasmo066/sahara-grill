@@ -11,7 +11,7 @@ export function Hero() {
   const images = ["/hero.jpeg"];
 
   return (
-    <ImagesSlider className="h-[70rem]" images={images}>
+    <ImagesSlider className="h-[60rem] p-6 md:p-10" images={images}>
       <motion.div
         initial={{
           opacity: 0,
@@ -28,9 +28,9 @@ export function Hero() {
       >
         <Image
           src="/navigation/herologo.svg"
-          alt="logo"
-          width={500}
-          height={500}
+          alt="The Sahara Grill Logo"
+          width={600}
+          height={600}
         />
         <motion.p
           initial={{
@@ -44,7 +44,7 @@ export function Hero() {
           transition={{
             duration: 0.6,
           }}
-          className="text-center font-light text-xl md:text-2xl text-white mt-6"
+          className="text-center font-light text-xl md:text-2xl text-white mt-6 z-70"
         >
           Fresh and delicious Mediterranean cuisine
         </motion.p>
@@ -64,7 +64,7 @@ export function Hero() {
             transition={{
               duration: 0.5,
             }}
-            className="bg-transparent text-primary text-lg py-4 px-10 border-2 border-primary transition duration-200 rounded-xl"
+            className="bg-transparent text-primary text-xl py-4 px-10 border-2 border-primary transition duration-200 rounded-xl hover:bg-primary hover:text-white"
           >
             See Menu
           </motion.button>
@@ -83,7 +83,8 @@ export function Hero() {
             transition={{
               duration: 0.5,
             }}
-            className="bg-primary text-white text-lg py-4 px-10 border-2 border-primary transition duration-200 rounded-xl"
+            className="bg-primary text-white text-xl py-4 px-10 border-2 border-primary transition duration-200 rounded-xl hover:bg-rose-700 hover:text-white
+             hover:border-rose-700"
           >
             Order Now
           </motion.button>
