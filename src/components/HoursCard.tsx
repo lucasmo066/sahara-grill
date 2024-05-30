@@ -38,7 +38,7 @@ const HoursCard = () => {
       <p className="text-center text-xl md:text-xl font-light mb-2">
         Join us for lunch and dinner daily!
       </p>
-      <div className={`text-center text-3xl font-semibold mt-4 mb-6 p-4 border-2 rounded-3xl ${isOpen ? 'text-green-500 border-green-500' : 'text-slate-600 border-slate-600'}`}>
+      <div className={` mx-5 text-center text-3xl font-medium my-6 p-4 border-2 rounded-full ${isOpen ? 'text-green-500 border-green-500' : 'text-primary border-primary'}`}>
         {isOpen ? 'Open' : 'Closed'}
       </div>
       <p className="text-center text-2xl md:text-3xl font-semibold mb-6">

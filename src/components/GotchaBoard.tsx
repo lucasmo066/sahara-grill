@@ -3,6 +3,7 @@ import { Button } from './ui/button';
 import Link from 'next/link';
 import HoursCard from '@/components/HoursCard';
 import LocationCard from '@/components/LocationCard';
+import CateringCard from '@/components/CateringCard';
 
 const GotchaBoard = () => {
   return (
@@ -12,38 +13,7 @@ const GotchaBoard = () => {
       <HoursCard />
 
       {/* Second row */}
-      <div className="col-span-12 md:col-span-5 p-5 h-[50rem] md:h-[60rem] border-2 border-primary rounded-3xl">
-        <h2 className="aladin-regular text-start text-9xl font-medium pb-6 mb-2 bg-clip-text text-transparent bg-gradient-to-b from-red-600 to-red-950">
-          Catering
-        </h2>
-        <div className="text-center text-3xl font-semibold mt-4 mb-6 p-4 rounded-3xl">
-          <p className="text-center text-xl md:text-xl font-light mb-2">
-            Let us cater your next event!
-          </p>
-          <p className="text-center text-2xl md:text-3xl font-semibold mb-6">
-            Questions about an upcoming event? Do not hesitate to call us.
-          </p>
-          <Image
-            src="/menu/ambiancetable.JPG"
-            alt="Catering event"
-            width={400}
-            height={400}
-            className="rounded-3xl items-center justify-center"
-          />
-          <div className="text-center text-3xl font-semibold mt-4 mb-6 p-4 rounded-3xl">
-            <Link href="tel:770-926-3446">
-              <Button variant="outline" className="border-2 border-primary text-primary m-5 px-10 py-4 hover:bg-primary hover:text-white">
-                Set up an event
-              </Button>
-            </Link>
-            <Link href="#catering">
-              <Button className="text-white px-14 py-4">
-                Learn More
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </div>
+     <CateringCard />
 
       <div className="col-span-12 md:col-span-7 p-5 h-[70rem] md:h-[60rem] border-2 border-primary rounded-3xl">
         <h2 className="aladin-regular text-start text-9xl font-medium mb-10 bg-clip-text text-transparent bg-gradient-to-b from-red-600 to-red-950">
