@@ -42,7 +42,7 @@ export default function Navbar() {
               height={100}
             />
           </Link>
-          <Link href="#catering">
+          <Link href="/#catering">
             <Image
               src="/navigation/privateEvents.png"
               alt="Catering"

@@ -30,7 +30,7 @@ const CateringCard = () => {
             </Button>
           </Link>
           <Link href="#catering">
-            <Button className="text-white px-14 py-4 md:px-12 md:py-6 hover:bg-rose-700 hover:text-white
+            <Button className="text-white px-10 py-4 md:px-14 lg:px-12 md:py-6 hover:bg-rose-700 hover:text-white
              hover:border-rose-700">
               Learn More
             </Button>
