@@ -21,6 +21,7 @@ const DrinksContent = () => {
     {
       title: "Beverages",
       sectionDescription: "Non-alcoholic beverages",
+      imageUrl: "/menu/turkishcoffee.jpeg",
       menuItems: [
         { name: "Fountain Drinks or Iced Tea", price: "$2.00", description: "" },
         { name: "Bottled Soda, Water, or Juices", price: "$2.00", description: "" },
@@ -31,7 +32,7 @@ const DrinksContent = () => {
     },
     {
       title: "White Wine",
-      imageUrl: "/menu/winesection.jpg",
+      imageUrl: "/menu/whitewine.jpeg",
       menuItems: [
         { name: "Sterling Chardonnay", price: "8.00 / 29.00", description: "A rich and buttery white wine" },
         { name: `Harken "Bottle Fermented" Chardonnay`, price: "9.00 / 33.00", description: "A rich and buttery white wine" },
@@ -39,10 +40,11 @@ const DrinksContent = () => {
         { name: "Beroni Fini Pinot Grigio", price: "$9.00 / $33.00", description: "A light and refreshing white wine" },
         { name: "Stella Rosa Moscato", price: "$8.00 / $29.00", description: "A sweet and fruity white wine" },
       ],
-      variant: "left",
+      variant: "right",
     },
     {
       title: "Red Wine",
+      imageUrl: "/menu/redwine.jpeg",
       menuItems: [
         { name: "Sterling Merlot", price: "$8.00 / $29.00", description: "A rich and fruity red wine" },
         { name: "Sterling Cabernet Sauvignon", price: "$9.00 / $33.00", description: "A bold and full-bodied red wine" },
@@ -50,7 +52,7 @@ const DrinksContent = () => {
         { name: "Sterling Malbec", price: "$9.00 / $33.00", description: "A bold and spicy red wine" },
         { name: "Sterling Shiraz", price: "$8.00 / $29.00", description: "A bold and spicy red wine" },
       ],
-      variant: "right",
+      variant: "left",
     },
     {
       title: "Beer",

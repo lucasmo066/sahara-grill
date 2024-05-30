@@ -34,6 +34,7 @@ const FoodContent = () => {
     },
     {
       title: "Salads",
+      
       menuItems: [
         { name: "Fattoush", price: "$6.00", description: "Mixed greens, tomatoes, cucumbers, radishes, and crispy pita chips" },
         { name: "Greek Salad", price: "$6.00", description: "Mixed greens, tomatoes, cucumbers, red onions, olives, and feta cheese" },
@@ -41,7 +42,7 @@ const FoodContent = () => {
         { name: "Sahara Salad", price: "$6.00", description: "" },
         { name: "House Salad", price: "$6.00", description: "" },
       ],
-      variant: "left",
+      variant: "right",
     },
     {
       title: "Salad Plates",

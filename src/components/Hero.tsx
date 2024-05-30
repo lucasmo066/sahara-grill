@@ -46,7 +46,7 @@ export function Hero() {
           }}
           className="text-center font-light text-xl md:text-2xl text-white mt-6 z-70"
         >
-          Fresh and delicious Mediterranean cuisine
+         Fresh and Delicious Mediterranean Food
         </motion.p>
 
         {/* Wrap paragraph and button in a flex container */}

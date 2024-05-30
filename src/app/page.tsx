@@ -8,7 +8,7 @@ import CateringSection from "@/components/CateringSection";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center text-center">
+    <main className="flex min-h-screen flex-col items-center text-center pb-10">
       <Hero />
       <GotchaBoard />
       <TestimonialsSection />
