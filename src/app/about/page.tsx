@@ -10,20 +10,14 @@ export default function AboutPage() {
       <Image
         src="/menu/oldpic.png"
         alt="Picture of the Edwar family working together at The Sahara Grill"
-        width={300}
-        height={300}
-        className="mb-6 w-[40rem] h-[30rem] lg:mb-0 lg:w-3/4 xl:w-3/7 lg:h-auto object-cover rounded-3xl"
+        width={600}
+        height={600}
+        className="mb-6 w-[30rem] h-[30rem] lg:mb-0 lg:w-3/4 xl:w-3/7 lg:h-auto object-cover rounded-3xl"
       />
       <div className="flex flex-col items-center mt-8 md:mx-20 lg:flex-row lg:items-start lg:justify-between w-full">
         <p className="text-xl font-extralight text-center mb-10">
           The Sahara Grill is a family-owned and operated restaurant located in Woodstock, Georgia. Our family has been serving the Woodstock community for over 20 years, and we take pride in providing our customers with delicious, authentic Mediterranean cuisine in a warm and welcoming atmosphere.
         </p>
-      </div>
-      <div className="flex flex-col items-center mt-8 md:mx-20 w-full border-b border-dotted dark:border-white border-neutral-800">
-      <h3 className="aladin-regular text-6xl lg:text-7xl mb-6">
-        Our Staff
-      </h3>
-      <AnimatedTooltipPreview />
       </div>
       
       <Image
@@ -43,7 +37,7 @@ export default function AboutPage() {
         height={300}
         className="mb-10 w-[40rem] h-[30rem] lg:mb-20 lg:w-3/4 xl:w-3/7 lg:h-auto object-cover rounded-3xl"
       />
-      <p className="text-xl font-extralight text-center mb-10">
+      <p className="text-xl font-extralight text-center md:mx-20 mb-20">
         Authentic Mediterranean cuisine isn&apos;t the only thing we&apos;re known for. Our warm and inviting atmosphere makes The Sahara Grill the perfect place to relax and enjoy a meal with family and friends. Whether you&apos;re dining in our cozy restaurant or taking your meal to go, you&apos;ll always feel welcome at The Sahara Grill.
       </p>
     </main>
