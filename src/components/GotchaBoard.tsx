@@ -8,7 +8,7 @@ import WhatsNewCard from '@/components/WhatsNewCard';
 
 const GotchaBoard = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-12 gap-4 w-full h-full p-5">
+    <div className="grid grid-cols-1 md:grid-cols-12 gap-4 w-full h-full p-2 md:p-5">
       {/* First row */}
       <LocationCard />
       <HoursCard />

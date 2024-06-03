@@ -15,8 +15,8 @@ export default function LocationCard() {
   };
 
   return (
-    <div className="col-span-12 md:col-span-7 p-5 h-[40rem] border-2 border-primary rounded-3xl">
-      <h2 className="aladin-regular text-start text-9xl font-medium mb-10 bg-clip-text text-transparent bg-gradient-to-b from-red-600 to-red-950">
+    <div className="col-span-12 md:col-span-7 p-5 h-[40rem] md:h-[50rem] border-2 border-primary rounded-3xl">
+      <h2 className="aladin-regular text-start text-8xl md:text-9xl font-medium mb-10 bg-clip-text text-transparent bg-gradient-to-b from-red-600 to-red-950">
         Location
       </h2>
       <div className="items-center justify-center m-5 lg:mx-10">
