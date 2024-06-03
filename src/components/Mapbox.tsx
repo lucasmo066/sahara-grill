@@ -4,7 +4,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import React, { useRef, useEffect } from 'react';
 import mapboxgl from 'mapbox-gl';
 
-mapboxgl.accessToken = 'pk.eyJ1IjoibHVjYXNtbzA2NiIsImEiOiJjbHdxdGlibjAwMWl2Mmlwajdqa2g1ZzRrIn0.fCwjgiDott4ZXETd1LmKPw';
+mapboxgl.accessToken = process.env.MAPBOX_TOKEN || "pk.eyJ1IjoibHVjYXNtbzA2NiIsImEiOiJjbHdxdGlibjAwMWl2Mmlwajdqa2g1ZzRrIn0.fCwjgiDott4ZXETd1LmKPw";
 
 const Map = () => {
   const mapContainer = useRef<HTMLDivElement | null>(null);

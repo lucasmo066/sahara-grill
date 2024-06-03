@@ -12,7 +12,7 @@ export interface Cards {
 
 export function LayoutGridCards() {
   return (
-    <div className="h-screen py-10 w-full">
+    <div className="h-screen pt-2 pb-20 w-full">
       <LayoutGrid cards={cards} />
     </div>
   );
@@ -72,28 +72,28 @@ const cards = [
   {
     id: 1,
     content: <SkeletonOne />,
-    className: "md:col-span-2",
+    className: "md:col-span-2 cursor-pointer",
     thumbnail:
       "/menu/outsideside.JPG",
   },
   {
     id: 2,
     content: <SkeletonTwo />,
-    className: "col-span-1",
+    className: "col-span-1 cursor-pointer",
     thumbnail:
       "/menu/kuftalambchickenlampgreen.JPG",
   },
   {
     id: 3,
     content: <SkeletonThree />,
-    className: "col-span-1",
+    className: "col-span-1 cursor-pointer",
     thumbnail:
       "/menu/plattertop.JPG",
   },
   {
     id: 4,
     content: <SkeletonFour />,
-    className: "md:col-span-2",
+    className: "md:col-span-2 cursor-pointer",
     thumbnail:
       "/menu/ambiancelamp.JPG",
   },

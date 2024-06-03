@@ -57,10 +57,10 @@ export default function Navbar() {
           <Menu className="w-14 h-14 font-extralight mr-6 text-primary cursor-pointer" onClick={toggleMenu} />
         </div>
           <ModeToggle />
-          <Link href="https://www.doordash.com/store/the-sahara-grill-woodstock-2839622/">
+          <Link href="https://www.ubereats.com/store/the-sahara-grill/v4HUaqXXV1GjYP0_TbW-Dw?diningMode=DELIVERY&sc=SEARCH_SUGGESTION" target="_blank">
             <Button variant="outline" className="border-2 border-primary text-primary px-10 my-10 hover:bg-primary hover:text-white">Delivery</Button>
           </Link>
-          <Link href="tel:470-787-2200">
+          <Link href="https://www.ubereats.com/store/the-sahara-grill/v4HUaqXXV1GjYP0_TbW-Dw?diningMode=PICKUP&sc=SEARCH_SUGGESTION" target="_blank">
             <Button variant="outline" className="border-2 border-primary text-primary px-10 my-10 hover:bg-primary hover:text-white">Takeout</Button>
           </Link>
         </div>
@@ -68,7 +68,7 @@ export default function Navbar() {
 
       {menuOpen && (
         <div className="border-4 fixed inset-0 dark:bg-black dark:bg-opacity-90 bg-zinc-200 bg-opacity-90 flex flex-col items-start justify-center z-50">
-          <div className="absolute bottom-5 right-5">
+          <div className="absolute bottom-6 left-14">
             <X className="w-20 h-20 m-10 dark:text-white text-primary cursor-pointer" onClick={toggleMenu} />
           </div>
           <div className="flex flex-col items-start gap-6 m-20">
