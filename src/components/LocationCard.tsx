@@ -31,7 +31,7 @@ export default function LocationCard() {
             <br />
             Suite 105
           </p>
-          <p className="text-xl md:text-2xl font-light ">
+          <p className="text-xl md:text-2xl font-light">
             Woodstock, GA 30188
           </p>
           <Button
