@@ -14,11 +14,11 @@ export default function AboutPage() {
           About Us
         </h1>
         <Image
-          src="/menu/oldpic.png"
+          src="/menu/outsidesignfront.JPG"
           alt="Picture of the Edwar family working together at The Sahara Grill"
           width={600}
           height={600}
-          className="mb-6 w-[30rem] h-[30rem] lg:mb-0 lg:w-3/4 xl:w-3/7 lg:h-auto object-cover rounded-3xl"
+          className="mb-6 w-[40rem] h-[30rem] lg:mb-0 lg:w-3/4 xl:w-3/7 lg:h-auto object-cover rounded-3xl"
         />
         <div className="flex flex-col items-center mt-8 md:mx-20 lg:flex-row lg:items-start lg:justify-between w-full">
           <p className="text-xl font-extralight text-center mb-10">
@@ -33,7 +33,7 @@ export default function AboutPage() {
           height={200}
           className="pt-20 w-[40rem] h-[30rem] lg:w-3/4 xl:w-3/7 lg:h-auto object-cover rounded-3xl"
         />
-        <p className="text-xl font-extralight text-center py-20 md:mx-20 mb-10 border-b border-dotted dark:border-white border-neutral-800">
+        <p className="text-xl font-extralight text-center py-20 md:mx-20 mb-10">
           Our menu features a wide variety of Mediterranean dishes, including falafel, shawarma, kebabs, and more. We use only the freshest ingredients and traditional cooking methods to ensure that every dish is bursting with flavor. Whether you&apos;re looking for a quick and healthy lunch or a hearty dinner, we have something for everyone.
         </p>
         <Image
@@ -43,9 +43,10 @@ export default function AboutPage() {
           height={300}
           className="mb-10 w-[40rem] h-[30rem] lg:mb-20 lg:w-3/4 xl:w-3/7 lg:h-auto object-cover rounded-3xl"
         />
-        <p className="text-xl font-extralight text-center md:mx-20 mb-20 border-b border-dotted dark:border-white border-neutral-800">
+        <p className="text-xl font-extralight text-center md:mx-20 mb-20">
           Authentic Mediterranean cuisine isn&apos;t the only thing we&apos;re known for. Our warm and inviting atmosphere makes The Sahara Grill the perfect place to relax and enjoy a meal with family and friends. Whether you&apos;re dining in our cozy restaurant or taking your meal to go, you&apos;ll always feel welcome at The Sahara Grill.
         </p>
+
       </main>
     </>
   );
