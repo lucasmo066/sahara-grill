@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function Footer() {
     return (
-        <footer className="dark:bg-neutral-800 bg-zinc-100 text-black dark:text-white">
+        <footer className="dark:bg-neutral-900 bg-zinc-100 text-black dark:text-white">
             <div className="container mx-auto py-10">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     {/* Logo Section */}
@@ -23,7 +23,7 @@ export default function Footer() {
                         <Link href="/about">
                             <p className="text-lg lg:text-xl">About</p>
                         </Link>
-                        <Link href="#catering">
+                        <Link href="/#catering">
                             <p className="text-lg lg:text-xl">Catering</p>
                         </Link>
                         <Link href="/sitemap">
@@ -49,6 +49,7 @@ export default function Footer() {
                         <p className="text-sm lg:text-md mt-2 font-thin">Friday - Saturday: 11am - 9pm</p>
                         <p className="text-sm lg:text-md mt-2 font-thin">Sunday: Closed</p>
                     </div>
+
                 </div>
             </div>
         </footer>
