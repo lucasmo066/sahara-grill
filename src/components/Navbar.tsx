@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import ModeToggle from "@/components/ui/toggle-mode";
 import { Button } from "./ui/button";
@@ -13,6 +13,14 @@ export default function Navbar() {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.classList.add('overflow-hidden');
+    } else {
+      document.body.classList.remove('overflow-hidden');
+    }
+  }, [menuOpen]);
 
   return (
     <header>
@@ -69,7 +77,7 @@ export default function Navbar() {
       </nav>
 
       {menuOpen && (
-        <div className="border-4 fixed inset-0 dark:bg-black dark:bg-opacity-90 bg-zinc-200 bg-opacity-90 flex flex-col items-start justify-center z-50">
+        <div className="fixed inset-0 dark:bg-black dark:bg-opacity-90 bg-zinc-200 bg-opacity-90 flex flex-col items-start justify-center z-50">
           <div className="absolute bottom-6 right-14">
             <X className="w-20 h-20 m-10 dark:text-white text-primary cursor-pointer" onClick={toggleMenu} />
           </div>
@@ -98,7 +106,7 @@ export default function Navbar() {
                 height={130}
               />
             </Link>
-            <Link href="#catering" onClick={toggleMenu}>
+            <Link href="/#catering" onClick={toggleMenu}>
               <Image
                 src="/navigation/privateEvents.png"
                 alt="Catering"

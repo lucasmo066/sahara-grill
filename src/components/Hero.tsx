@@ -64,7 +64,7 @@ export function Hero() {
             transition={{
               duration: 0.5,
             }}
-            className="bg-transparent text-primary text-xl py-4 px-10 border-2 border-primary transition duration-200 rounded-xl hover:bg-primary hover:text-white"
+            className="bg-transparent text-primary text-lg py-2 px-8 md:text-xl md:py-4 md:px-10 border-2 border-primary transition duration-200 rounded-xl hover:bg-primary hover:text-white"
           >
             See Menu
           </motion.button>
@@ -83,7 +83,7 @@ export function Hero() {
             transition={{
               duration: 0.5,
             }}
-            className="bg-primary text-white text-lg py-4 px-10 md:text-xl md:py-4 md:px-10 border-2 border-primary transition duration-200 rounded-xl hover:bg-rose-700 hover:text-white
+            className="bg-primary text-white text-lg py-2 px-8 md:text-xl md:py-4 md:px-10 border-2 border-primary transition duration-200 rounded-xl hover:bg-rose-700 hover:text-white
              hover:border-rose-700"
           >
             Order Now
