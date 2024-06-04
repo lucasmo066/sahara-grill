@@ -65,12 +65,12 @@ export default function Navbar() {
             <Menu className="w-14 h-14 font-extralight mr-4 text-primary cursor-pointer" onClick={toggleMenu} />
           </div>
           <ModeToggle />
-          <div className="flex flex-col md:flex-row gap-1 md:gap-4">
+          <div className="flex flex-row gap-2 md:gap-4">
             <Link href="https://www.ubereats.com/store/the-sahara-grill/v4HUaqXXV1GjYP0_TbW-Dw?diningMode=DELIVERY&sc=SEARCH_SUGGESTION" target="_blank">
-              <Button variant="outline" className="border-2 border-primary text-primary px-10 my-2 md:my-0 hover:bg-primary hover:text-white">Delivery</Button>
+              <Button variant="outline" className="border-2 border-primary text-primary px-6 my-2 md:py-4 md:px-10 md:my-0 lg:py-4 lg:px-12 hover:bg-primary hover:text-white">Delivery</Button>
             </Link>
             <Link href="https://www.ubereats.com/store/the-sahara-grill/v4HUaqXXV1GjYP0_TbW-Dw?diningMode=PICKUP&sc=SEARCH_SUGGESTION" target="_blank">
-              <Button variant="outline" className="border-2 border-primary text-primary px-10 my-2 md:my-0 hover:bg-primary hover:text-white">Takeout</Button>
+              <Button variant="outline" className="border-2 border-primary text-primary px-6 my-2 md:py-4 md:px-10 md:my-0 lg:py-4 lg:px-12  hover:bg-primary hover:text-white">Takeout</Button>
             </Link>
           </div>
         </div>
