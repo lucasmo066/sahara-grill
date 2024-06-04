@@ -57,7 +57,7 @@ const DrinksContent = () => {
     {
       title: "Beer",
       sectionDescription: "Imported and domestic beers",
-      imageUrl: "/menu/beerfridge.jpg",
+      imageUrl: "/menu/beerfridge.JPG",
       menuItems: [
         { name: "Bud Light", price: "$3.00", description: "" },
         { name: "Miller Lite", price: "$3.00", description: "" },

@@ -11,7 +11,7 @@ import Head from "next/head";
 const inter = FontSans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Sahara Grill",
+  title: "The Sahara Grill",
   description: "Fresh and delicious Mediterranean cuisine in Woodstock, GA",
 };
 
@@ -34,7 +34,7 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#b91313" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="description" content="Fresh and delicious Mediterranean cuisine in Woodstock, GA" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />

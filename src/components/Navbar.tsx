@@ -28,7 +28,7 @@ export default function Navbar() {
           </Link>
           <Link href="/menu">
             <Image
-              src="/navigation/Menu.png"
+              src="/navigation/menu.png"
               alt="Menu"
               width={100}
               height={100}
@@ -53,16 +53,18 @@ export default function Navbar() {
         </div>
        
         <div className="flex items-center gap-6">
-        <div className="md:hidden flex items-center">
-          <Menu className="w-14 h-14 font-extralight mr-6 text-primary cursor-pointer" onClick={toggleMenu} />
-        </div>
+          <div className="md:hidden flex items-center">
+            <Menu className="w-14 h-14 font-extralight mr-6 text-primary cursor-pointer" onClick={toggleMenu} />
+          </div>
           <ModeToggle />
-          <Link href="https://www.ubereats.com/store/the-sahara-grill/v4HUaqXXV1GjYP0_TbW-Dw?diningMode=DELIVERY&sc=SEARCH_SUGGESTION" target="_blank">
-            <Button variant="outline" className="border-2 border-primary text-primary px-10 my-10 hover:bg-primary hover:text-white">Delivery</Button>
-          </Link>
-          <Link href="https://www.ubereats.com/store/the-sahara-grill/v4HUaqXXV1GjYP0_TbW-Dw?diningMode=PICKUP&sc=SEARCH_SUGGESTION" target="_blank">
-            <Button variant="outline" className="border-2 border-primary text-primary px-10 my-10 hover:bg-primary hover:text-white">Takeout</Button>
-          </Link>
+          <div className="flex flex-col md:flex-row gap-2 md:gap-6">
+            <Link href="https://www.ubereats.com/store/the-sahara-grill/v4HUaqXXV1GjYP0_TbW-Dw?diningMode=DELIVERY&sc=SEARCH_SUGGESTION" target="_blank">
+              <Button variant="outline" className="border-2 border-primary text-primary px-10 my-2 md:my-0 hover:bg-primary hover:text-white">Delivery</Button>
+            </Link>
+            <Link href="https://www.ubereats.com/store/the-sahara-grill/v4HUaqXXV1GjYP0_TbW-Dw?diningMode=PICKUP&sc=SEARCH_SUGGESTION" target="_blank">
+              <Button variant="outline" className="border-2 border-primary text-primary px-10 my-2 md:my-0 hover:bg-primary hover:text-white">Takeout</Button>
+            </Link>
+          </div>
         </div>
       </nav>
 
