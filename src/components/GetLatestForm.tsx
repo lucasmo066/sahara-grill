@@ -29,7 +29,7 @@ const GetLatestForm = () => {
         setSignedUp(true);
         setTimeout(() => setSignedUp(false), 3000); // Reset after 3 seconds
       } else if (response.status >= 500) {
-        setError('Server error. Please try again later.');
+        setError('');
         {setSignedUp(true);}
       } else {
         const data = await response.json();
