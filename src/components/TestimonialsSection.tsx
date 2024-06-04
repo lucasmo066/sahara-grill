@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function TestimonialsSection() {
     return (
         <div className="flex flex-col items-center w-full h-full mt-20 pb-10">
-            <h2 className="aladin-regular text-center text-7xl mx-5 md:text-8xl font-medium bg-clip-text text-transparent bg-gradient-to-b from-red-600 to-red-950">See What Our Customers are Saying</h2>
+            <h2 className="aladin-regular text-center text-7xl px-5 md:text-8xl font-medium bg-clip-text text-transparent bg-gradient-to-b from-red-600 to-red-950">See What Our Customers are Saying</h2>
            
             <InfiniteMovingCardsDemo />
             <Image
