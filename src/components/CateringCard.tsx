@@ -5,7 +5,7 @@ import { Button } from './ui/button';
 
 const CateringCard = () => {
   return (
-    <div className="col-span-12 md:col-span-5 p-5 h-[50rem] md:h-[60rem] border-2 border-primary rounded-3xl">
+    <div className="col-span-12 md:col-span-5 p-5 h-[50rem] md:h-[60rem] border-2 border-primary rounded-3xl" id="cateringcard">
       <h2 className="aladin-regular text-start text-8xl md:text-9xl font-medium pb-3 bg-clip-text text-transparent bg-gradient-to-b from-red-600 to-red-950">
         Catering
       </h2>

@@ -31,7 +31,7 @@ const HoursCard = () => {
   }, []);
 
   return (
-    <div className="col-span-12 md:col-span-5 p-10 h-[40rem] md:h-[50rem] border-2 border-primary rounded-3xl">
+    <div className="col-span-12 md:col-span-5 p-10 h-[40rem] md:h-[50rem] border-2 border-primary rounded-3xl" id="hours">
       <h2 className="aladin-regular text-start text-8xl md:text-9xl font-medium mb-10 bg-clip-text text-transparent bg-gradient-to-b from-red-600 to-red-950">
         Hours
       </h2>

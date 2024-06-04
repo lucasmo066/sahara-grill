@@ -4,7 +4,7 @@ import GetLatestForm from '@/components/GetLatestForm';
 
 const WhatsNewCard = () => {
   return (
-    <div className="col-span-12 md:col-span-7 p-2 md:p-5 h-[70rem] md:h-[60rem] border-2 border-primary rounded-3xl">
+    <div className="col-span-12 md:col-span-7 p-2 md:p-5 h-[70rem] md:h-[60rem] border-2 border-primary rounded-3xl" id="whatsnew">
       <h2 className="aladin-regular text-start text-8xl md:text-9xl font-medium mb-10 bg-clip-text text-transparent bg-gradient-to-b from-red-600 to-red-950">
         What&apos;s New
       </h2>
