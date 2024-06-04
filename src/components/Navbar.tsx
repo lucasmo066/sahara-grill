@@ -16,8 +16,8 @@ export default function Navbar() {
 
   return (
     <header>
-      <nav className="flex flex-row justify-evenly items-center p-5">
-        <div className="hidden md:flex items-center sm:gap-6 lg:gap-10">
+      <nav className="flex flex-row justify-evenly items-center p-4">
+        <div className="hidden md:flex items-center sm:gap-2 lg:gap-10">
           <Link href="/">
             <Image
               src="/navigation/home.png"
@@ -52,12 +52,12 @@ export default function Navbar() {
           </Link>
         </div>
        
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-4">
           <div className="md:hidden flex items-center">
-            <Menu className="w-14 h-14 font-extralight mr-6 text-primary cursor-pointer" onClick={toggleMenu} />
+            <Menu className="w-14 h-14 font-extralight mr-4 text-primary cursor-pointer" onClick={toggleMenu} />
           </div>
           <ModeToggle />
-          <div className="flex flex-col md:flex-row gap-2 md:gap-6">
+          <div className="flex flex-col md:flex-row gap-1 md:gap-4">
             <Link href="https://www.ubereats.com/store/the-sahara-grill/v4HUaqXXV1GjYP0_TbW-Dw?diningMode=DELIVERY&sc=SEARCH_SUGGESTION" target="_blank">
               <Button variant="outline" className="border-2 border-primary text-primary px-10 my-2 md:my-0 hover:bg-primary hover:text-white">Delivery</Button>
             </Link>
@@ -70,7 +70,7 @@ export default function Navbar() {
 
       {menuOpen && (
         <div className="border-4 fixed inset-0 dark:bg-black dark:bg-opacity-90 bg-zinc-200 bg-opacity-90 flex flex-col items-start justify-center z-50">
-          <div className="absolute bottom-6 left-14">
+          <div className="absolute bottom-6 right-14">
             <X className="w-20 h-20 m-10 dark:text-white text-primary cursor-pointer" onClick={toggleMenu} />
           </div>
           <div className="flex flex-col items-start gap-6 m-20">
