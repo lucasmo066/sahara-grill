@@ -64,13 +64,13 @@ export function Hero() {
             transition={{
               duration: 0.5,
             }}
-            className="bg-transparent text-primary text-xl py-4 px-10 border-2 border-primary transition duration-200 rounded-xl hover:bg-primary hover:text-white"
+            className="bg-transparent text-primary text-lg py-4 px-6 md:text-xl md:px-10 border-2 border-primary transition duration-200 rounded-xl hover:bg-primary hover:text-white"
           >
             See Menu
           </motion.button>
           </Link>
 
-          <Link href="/order">
+          <Link href="https://www.ubereats.com/store/the-sahara-grill/v4HUaqXXV1GjYP0_TbW-Dw?diningMode=PICKUP&sc=SEARCH_SUGGESTION">
           <motion.button
             initial={{
               opacity: 0,
@@ -83,7 +83,7 @@ export function Hero() {
             transition={{
               duration: 0.5,
             }}
-            className="bg-primary text-white text-xl py-4 px-10 border-2 border-primary transition duration-200 rounded-xl hover:bg-rose-700 hover:text-white
+            className="bg-primary text-white text-lg py-4 px-6 md:text-xl md:px-10 border-2 border-primary transition duration-200 rounded-xl hover:bg-rose-700 hover:text-white
              hover:border-rose-700"
           >
             Order Now
