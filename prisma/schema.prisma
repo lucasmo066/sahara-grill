@@ -2,7 +2,7 @@
 
 datasource db {
   provider = "mongodb"
-  url      = env("mongodb+srv://lucasmo066:5BQ1JWcvKRDuf7N8@emails.kgik85p.mongodb.net/SaharaGrill?retryWrites=true&w=majority&appName=Emails")
+  url      = env("MONGODB_URI")
 }
 
 generator client {

@@ -29,8 +29,7 @@ const GetLatestForm = () => {
         setSignedUp(true);
         setTimeout(() => setSignedUp(false), 3000); // Reset after 3 seconds
       } else if (response.status >= 500) {
-        setError('');
-        {setSignedUp(true);}
+        setError('Server error. Please try again later.');
       } else {
         const data = await response.json();
         setError(data.message || 'Error saving email');
