@@ -58,7 +58,7 @@ const SkeletonThree = () => {
 const SkeletonFour = () => {
   return (
     <div>
-      <p className="font-bold text-4xl text-white">Friendly Serivce</p>
+      <p className="font-bold text-4xl text-white">Friendly Service</p>
       <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
         Our friendly and knowledgeable staff is always ready to help you find
         the perfect dish to suit your tastes. Whether you are a regular or a
