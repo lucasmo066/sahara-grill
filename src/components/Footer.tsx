@@ -39,7 +39,7 @@ export default function Footer() {
                             <br />
                             suite 105
                             <br />
-                            Woodstock, Georgia 30188, United States
+                            Woodstock, Georgia 30188
                         </p>
                     </div>
                     {/* Hours Section */}
@@ -49,7 +49,12 @@ export default function Footer() {
                         <p className="text-sm lg:text-md mt-2 font-thin">Friday - Saturday: 11am - 9pm</p>
                         <p className="text-sm lg:text-md mt-2 font-thin">Sunday: Closed</p>
                     </div>
-
+                    <p className="text-sm font-mono text-center mt-4 md:col-span-4">
+                        This site was developed and is maintained by <a href="https://sunset-dig.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-orange-500">Sunset Digital</a>
+                    </p>
+                <p className="text-sm text-center md:col-span-4">
+                    &copy; 2024 The Sahara Grill. All rights reserved.
+                </p>
                 </div>
             </div>
         </footer>
