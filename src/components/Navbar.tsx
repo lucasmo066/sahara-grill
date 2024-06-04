@@ -84,7 +84,7 @@ export default function Navbar() {
             </Link>
             <Link href="/menu" onClick={toggleMenu}>
               <Image
-                src="/navigation/Menu.png"
+                src="/navigation/menu.png"
                 alt="Menu"
                 width={130}
                 height={130}
