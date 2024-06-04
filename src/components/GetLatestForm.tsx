@@ -28,6 +28,8 @@ const GetLatestForm = () => {
         setEmail('');
         setSignedUp(true);
         setTimeout(() => setSignedUp(false), 3000); // Reset after 3 seconds
+      } else if (response.status >= 500) {
+        setError('Server error. Please try again later.');
       } else {
         const data = await response.json();
         setError(data.message || 'Error saving email');
@@ -35,6 +37,8 @@ const GetLatestForm = () => {
     } catch (e) {
       if (e instanceof z.ZodError) {
         setError(e.errors[0].message);
+      } else {
+        setError('Network error. Please check your connection and try again.');
       }
     }
   };
