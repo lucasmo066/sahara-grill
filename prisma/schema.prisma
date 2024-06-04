@@ -1,8 +1,8 @@
 // prisma/schema.prisma
 
 datasource db {
-  provider = "postgresql" // or your chosen provider
-  url      = env("DATABASE_URL")
+  provider = "mongodb"
+  url      = env("mongodb+srv://lucasmo066:5BQ1JWcvKRDuf7N8@emails.kgik85p.mongodb.net/SaharaGrill?retryWrites=true&w=majority&appName=Emails")
 }
 
 generator client {
