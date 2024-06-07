@@ -12,7 +12,7 @@ export default function Footer() {
                             src="/saharagrillgray.svg"
                             alt="logo"
                             width={200}
-                            height={100}
+                            height={200}
                         />
                     </div>
                     {/* Links Section */}
@@ -37,11 +37,12 @@ export default function Footer() {
                         <p className="text-sm lg:text-md mt-2 font-thin">
                             12910 Highway 92
                             <br />
-                            suite 105
+                            Suite 105
                             <br />
                             Woodstock, Georgia 30188
                         </p>
                     </div>
+                   
                     {/* Hours Section */}
                     <div className="flex flex-col items-center text-center mb-4 md:mb-0 md:col-span-2">
                         <p className="text-lg lg:text-xl font-bold">Hours</p>

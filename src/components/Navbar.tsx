@@ -60,7 +60,7 @@ export default function Navbar() {
           </Link>
         </div>
        
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 py-4">
           <div className="md:hidden flex items-center">
             <Menu className="w-14 h-14 font-extralight mr-4 text-primary cursor-pointer" onClick={toggleMenu} />
           </div>
@@ -70,7 +70,7 @@ export default function Navbar() {
               <Button variant="outline" className="border-2 border-primary text-primary px-6 my-2 md:py-4 md:px-10 md:my-0 lg:py-4 lg:px-12 hover:bg-primary hover:text-white">Delivery</Button>
             </Link>
             <Link href="https://www.ubereats.com/store/the-sahara-grill/v4HUaqXXV1GjYP0_TbW-Dw?diningMode=PICKUP&sc=SEARCH_SUGGESTION" target="_blank">
-              <Button variant="outline" className="border-2 border-primary text-primary px-6 my-2 md:py-4 md:px-10 md:my-0 lg:py-4 lg:px-12  hover:bg-primary hover:text-white">Takeout</Button>
+              <Button variant="outline" className="border-2 border-primary text-primary px-6 my-2 md:py-4 md:px-10 md:my-0 lg:py-4 lg:px-12 hover:bg-primary hover:text-white">Takeout</Button>
             </Link>
           </div>
         </div>
