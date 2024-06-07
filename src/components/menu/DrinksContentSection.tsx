@@ -21,7 +21,7 @@ const FoodContentSections: React.FC<DrinksContentSectionsProps> = ({ title, sect
   return (
     <div className="border-b border-dotted border-neutral-600 pb-8 pt-6">
       <h2 className="aladin-regular text-3xl md:text-4xl font-semibold mb-2 text-start">{title}</h2>
-      {sectionDescription && <p className="text-neutral-400 text-md font-light mb-6">{sectionDescription}</p>}
+      {sectionDescription && <p className="text-neutral-700 dark:text-neutral-400 text-md font-light mb-6">{sectionDescription}</p>}
       <div className={classNames("flex flex-col md:flex-row md:items-center", { "md:flex-row-reverse": variant === 'right' })}>
         {imageUrl && (
           <div className="w-full md:w-1/2 my-4 md:mb-0 md:h-auto">
@@ -38,12 +38,12 @@ const FoodContentSections: React.FC<DrinksContentSectionsProps> = ({ title, sect
         <div className={`w-full md:w-${imageUrl ? '1/2' : 'full'} px-2 md:px-8`}>
           <ul className="pl-6 py-4">
             {menuItems.map((item, index) => (
-              <li key={index} className="mb-3">
+              <li key={index} className="mb-6">
                 <div className="flex justify-between">
-                  <span className="font-semibold">{item.name}</span>
-                  <span className="dark:text-white text-black font-extralight">{item.price}</span>
+                  <span className="font-semibold  md:text-lg">{item.name}</span>
+                  <span className="dark:text-white text-black font-light">{item.price}</span>
                 </div>
-                <div className="text-neutral-400 text-sm font-mono mb-2">{item.description}</div>
+                <div className="text-neutral-500 text-sm md:text-base font-light mb-2">{item.description}</div>
               </li>
             ))}
           </ul>

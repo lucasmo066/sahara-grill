@@ -46,7 +46,7 @@ const FoodContent = () => {
     },
     {
       title: "Salad Plates",
-      sectionDescription: "Choices between the salads are Kale salad, Arugula salad, Cabbage salad, and Chickpea's",
+      sectionDescription: "Choices between the salads are Kale salad, Arugula salad, Cabbage salad, and Chickpeas",
       menuItems: [
         { name: "One Item Salad Plate", price: "$4.00", description: "" },
         { name: "Two Item Salad Plate", price: "$7.00", description: "" },
@@ -184,7 +184,7 @@ const SectionWithAnimation: React.FC<SectionWithAnimationProps> = ({ section, de
       ref={ref}
       initial={{ opacity: 0, y: 20 }}
       animate={controls}
-      transition={{ delay, duration: 0.2 }}
+      transition={{ duration: 0.2 }}
     >
       <FoodContentSections
         title={section.title}
