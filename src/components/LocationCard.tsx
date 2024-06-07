@@ -19,7 +19,7 @@ export default function LocationCard() {
       <h2 className="aladin-regular text-start text-8xl md:text-9xl font-medium mb-10 bg-clip-text text-transparent bg-gradient-to-b from-red-600 to-red-950">
         Location
       </h2>
-      <div className="items-center justify-center m-5 lg:mx-20">
+      <div className="items-center justify-center m-5 lg:mx-10 xl:mx-20">
         {/* mapbox of location goes here */}
         <div className="h-60 w-full items-center rounded-3xl">
           <Mapbox />
