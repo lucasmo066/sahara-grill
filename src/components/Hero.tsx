@@ -32,7 +32,7 @@ export function Hero() {
           width={600}
           height={600}
         />
-        <motion.p
+        <motion.h1
           initial={{
             opacity: 0,
             y: 80,
@@ -47,7 +47,7 @@ export function Hero() {
           className="text-center font-light text-xl md:text-2xl text-white mt-6 z-70"
         >
          Fresh and Delicious Mediterranean Food
-        </motion.p>
+        </motion.h1>
 
         {/* Wrap paragraph and button in a flex container */}
         <div className="flex justify-center items-center mt-10 space-x-6">

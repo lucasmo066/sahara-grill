@@ -15,7 +15,7 @@ export default function CateringSection() {
     const [accordionValue, setAccordionValue] = useState<string>('');
 
     return (
-        <div className="flex flex-col w-full items-center justify-center pb-10 px-10 lg:px-20 bg-theme text-black dark:text-white" id="catering">
+        <div className="flex flex-col w-full items-center justify-center py-20 px-10 lg:px-20 bg-theme text-black dark:text-white" id="catering">
             <h2 className="aladin-regular text-start text-9xl font-medium mb-5 pb-4 bg-clip-text text-transparent bg-gradient-to-b from-red-600 to-red-950">
                 Private Events
             </h2>
