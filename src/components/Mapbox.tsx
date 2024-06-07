@@ -14,7 +14,7 @@ const Map = () => {
       const map = new mapboxgl.Map({
         container: mapContainer.current,
         style: 'mapbox://styles/mapbox/streets-v11',
-        center: [-84.47276, 34.08700], // Updated coordinates
+        center: [-84.47276, 34.08700], // long, lat
         zoom: 16
       });
 
@@ -26,7 +26,7 @@ const Map = () => {
     }
   }, []);
 
-  return <div ref={mapContainer} className="w-full h-full border rounded-3xl" />;
+  return <div ref={mapContainer} className="w-full h-full rounded-3xl" />;
 };
 
 export default Map;
