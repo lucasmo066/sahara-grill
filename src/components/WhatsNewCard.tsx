@@ -11,7 +11,7 @@ const WhatsNewCard = () => {
       <div className="h-[30rem] flex flex-col items-center gap-4">
         <div className="flex justify-center items-center w-full">
           <Image
-            src="/daily.png"
+            src="/menu/drinkswinecabinetfront.JPG"
             alt="Sahara Grill has Daily Specials on Wraps and Plates"
             width={400}
             height={400}
