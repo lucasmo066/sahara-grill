@@ -100,7 +100,7 @@ const SectionWithAnimation: React.FC<SectionWithAnimationProps> = ({ section, de
       ref={ref}
       initial={{ opacity: 0, y: 20 }}
       animate={controls}
-      transition={{ delay, duration: 0.5 }}
+      transition={{ duration: 0.5 }}
     >
       <DrinksContentSection
         title={section.title}
