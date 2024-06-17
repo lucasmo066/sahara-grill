@@ -93,11 +93,11 @@ const FoodContent = () => {
       imageUrl: "/menu/chickenkaboboutside.JPG",
       sectionDescription: "All the Kabob Platters are served with yellow rice, house salad, and pita bread",
       menuItems: [
-        { name: "Chicken Kabob", price: "$12.00", description: "Marinated chicken breast skewered and grilled" },
+        { name: "Chicken Kabob", price: "$15.00", description: "Marinated chicken breast skewered and grilled" },
         { name: "Beef Kabob", price: "$15.00", description: "Marinated beef skewered and grilled" },
         { name: "Kufta Kabob", price: "$15.00", description: "Ground beef skewered and grilled" },
         { name: "Lamb Kabob", price: "$18.00", description: "Marinated lamb skewered and grilled" },
-        { name: "Veggie Kabob", price: "$18.00", description: "Marinated veggies skewered and grilled" },
+        { name: "Veggie Kabob", price: "$12.00", description: "Marinated veggies skewered and grilled" },
         { name: "Rack of Lamb", price: "$29.00", description: "Marinated lamb chops grilled to perfection" },
       ],
       variant: "left",

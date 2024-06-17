@@ -42,7 +42,7 @@ const FoodContentSections: React.FC<FoodContentSectionsProps> = ({ title, sectio
                   <span className="font-semibold md:text-lg">{item.name}</span>
                   <span className="dark:text-white text-black font-light">{item.price}</span>
                 </div>
-                <div className="text-neutral-500 dark:text-neutral-500 text-sm md:text-base font-light mb-2">{item.description}</div>
+                <div className="text-neutral-500 text-sm md:text-base font-light mb-2">{item.description}</div>
               </li>
             ))}
           </ul>
