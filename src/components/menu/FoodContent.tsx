@@ -148,7 +148,6 @@ const FoodContent = () => {
       menuItems: [
         { name: "Rice Pudding", price: "$3.00", description: "" },
         { name: "Baklava", price: "$4.00", description: "" },
-        { name: "Woodstock Cream Pie", price: "$5.00", description: "" },
         { name: "Chocolate Cake", price: "$6.00", description: "" },
       ],
       variant: "left",
