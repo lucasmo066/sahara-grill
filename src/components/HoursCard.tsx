@@ -11,7 +11,6 @@ const HoursCard = () => {
       const day = now.getDay();
       const hours = now.getHours();
       const minutes = now.getMinutes();
-
       const time = hours * 100 + minutes;
 
       if (
@@ -42,19 +41,13 @@ const HoursCard = () => {
         {isOpen ? 'Open' : 'Closed'}
       </div>
       <p className="text-center text-2xl md:text-3xl font-semibold mb-6">
-        Monday - Thursday
+        Monday - Saturday
         <br />
         <span className="font-extralight">
-          11am - 8:30pm
+          11am - 8:00pm
         </span>
       </p>
-      <p className="text-center text-2xl md:text-3xl font-semibold mb-6">
-        Friday - Saturday
-        <br />
-        <span className="font-extralight">
-          11am - 9pm
-        </span>
-      </p>
+      
       <p className="text-center text-2xl md:text-3xl font-semibold">
         Sunday
         <br />
