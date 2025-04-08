@@ -23,8 +23,8 @@ const DrinksContent = () => {
       sectionDescription: "Non-alcoholic beverages",
       imageUrl: "/menu/turkishcoffee.jpeg",
       menuItems: [
-        { name: "Fountain Drinks or Iced Tea", price: "$2.00", description: "" },
-        { name: "Bottled Soda, Water, or Juices", price: "$2.00", description: "" },
+        { name: "Fountain Drinks or Iced Tea", price: "$2.50", description: "" },
+        { name: "Bottled Soda, Water, or Juices", price: "$2.50", description: "" },
         { name: "Hot Coffee or Tea", price: "$2.00", description: "" },
         { name: "Turkish Coffee", price: "$3.00", description: "Very strong coffee prepared the authentic way" },
       ],
