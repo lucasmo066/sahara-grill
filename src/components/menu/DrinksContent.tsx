@@ -59,12 +59,16 @@ const DrinksContent = () => {
       sectionDescription: "Imported and domestic beers",
       imageUrl: "/menu/beerfridge.JPG",
       menuItems: [
-        { name: "Bud Light", price: "$3.00", description: "" },
-        { name: "Miller Lite", price: "$3.00", description: "" },
-        { name: "Coors Light", price: "$3.00", description: "" },
-        { name: "Corona", price: "$4.00", description: "" },
-        { name: "Heineken", price: "$4.00", description: "" },
-        { name: "Stella Artois", price: "$4.00", description: "" },
+        {
+          name: "Domestic Beer",
+          price: "$5.00",
+          description: "",
+        },
+        {
+          name: "Craft/Import Beers",
+          price: "$7.00",
+          description: "",
+        },
       ],
       variant: "right",
     },
