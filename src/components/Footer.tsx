@@ -46,13 +46,23 @@ export default function Footer() {
                     {/* Hours Section */}
                     <div className="flex flex-col items-center text-center mb-4 md:mb-0 md:col-span-2">
                         <p className="text-lg lg:text-xl font-bold">Hours</p>
-                        <p className="text-sm lg:text-md mt-2 font-thin">Monday - Thursday: 11am - 8:30pm</p>
-                        <p className="text-sm lg:text-md mt-2 font-thin">Friday - Saturday: 11am - 9pm</p>
-                        <p className="text-sm lg:text-md mt-2 font-thin">Sunday: Closed</p>
+                        <p className="text-md lg:text-lg mt-2 font-thin">
+                            Sunday - Monday
+                            <br />
+                            Closed
+                        </p>
+                        <p className="text-md lg:text-lg mt-2 font-thin">
+                            Tuesday - Thursday
+                            <br />
+                            11AM - 8PM
+                        </p>
+                        <p className="text-md lg:text-lg mt-2 font-thin">
+                            Friday - Saturday
+                            <br />
+                            11AM - 9PM
+                        </p>
                     </div>
-                    <p className="text-sm font-mono text-center mt-4 md:col-span-4">
-                        This site was developed and is maintained by <a href="https://sunset-dig.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-orange-500">Sunset Digital</a>
-                    </p>
+                  
                 <p className="text-sm text-center md:col-span-4">
                     &copy; 2024 The Sahara Grill. All rights reserved.
                 </p>

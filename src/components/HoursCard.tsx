@@ -14,7 +14,7 @@ const HoursCard = () => {
       const time = hours * 100 + minutes;
 
       if (
-        (day >= 1 && day <= 4 && time >= 1100 && time <= 2030) || // Monday - Thursday 11:00 - 20:30
+        (day >= 2 && day <= 4 && time >= 1100 && time <= 2000) || // Tuesday - Thursday 11:00 - 20:00
         ((day === 5 || day === 6) && time >= 1100 && time <= 2100) // Friday - Saturday 11:00 - 21:00
       ) {
         setIsOpen(true);
@@ -41,18 +41,26 @@ const HoursCard = () => {
         {isOpen ? 'Open' : 'Closed'}
       </div>
       <p className="text-center text-2xl md:text-3xl font-semibold mb-6">
-        Monday - Saturday
+        Sunday - Monday
         <br />
         <span className="font-extralight">
-          11am - 8:00pm
+          Closed
+        </span>
+      </p>
+      
+      <p className="text-center text-2xl md:text-3xl font-semibold mb-6">
+        Tuesday - Thursday
+        <br />
+        <span className="font-extralight">
+          11AM - 8PM
         </span>
       </p>
       
       <p className="text-center text-2xl md:text-3xl font-semibold">
-        Sunday
+        Friday - Saturday
         <br />
         <span className="font-extralight">
-          Closed
+          11AM - 9PM
         </span>
       </p>
     </div>

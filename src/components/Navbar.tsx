@@ -66,10 +66,10 @@ export default function Navbar() {
           </div>
           <ModeToggle />
           <div className="flex flex-row gap-2 md:gap-4">
-            <Link href="https://www.ubereats.com/store/the-sahara-grill/v4HUaqXXV1GjYP0_TbW-Dw?diningMode=DELIVERY&sc=SEARCH_SUGGESTION" target="_blank">
+            <Link href="https://order.toasttab.com/online/the-sahara-grill-12910-georgia-92?diningOption=delivery&rwg9TEAjTKr8FgdHbPKEb8n0O8cMMCDccL1w%3D%3Dtoken=ACgRB3cAeVD-eatrJT8rDNZNpHkiGyEFYHYRw-QZ5zWn6zUVO92nTSVE4ZwMs4Cxr" target="_blank">
               <Button variant="outline" className="border-2 border-primary text-primary px-6 my-2 md:py-4 md:px-10 md:my-0 lg:py-4 lg:px-12 hover:bg-primary hover:text-white">Delivery</Button>
             </Link>
-            <Link href="https://www.ubereats.com/store/the-sahara-grill/v4HUaqXXV1GjYP0_TbW-Dw?diningMode=PICKUP&sc=SEARCH_SUGGESTION" target="_blank">
+            <Link href="https://order.toasttab.com/online/the-sahara-grill-12910-georgia-92" target="_blank">
               <Button variant="outline" className="border-2 border-primary text-primary px-6 my-2 md:py-4 md:px-10 md:my-0 lg:py-4 lg:px-12 hover:bg-primary hover:text-white">Takeout</Button>
             </Link>
           </div>

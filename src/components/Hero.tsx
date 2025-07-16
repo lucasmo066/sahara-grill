@@ -71,7 +71,7 @@ export function Hero() {
           </motion.button>
           </Link>
 
-          <Link href="https://www.ubereats.com/store/the-sahara-grill/v4HUaqXXV1GjYP0_TbW-Dw?diningMode=PICKUP&sc=SEARCH_SUGGESTION" target="_blank">
+          <Link href="https://order.toasttab.com/online/the-sahara-grill-12910-georgia-92" target="_blank">
           <motion.button
             initial={{
               opacity: 0,
