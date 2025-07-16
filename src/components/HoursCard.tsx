@@ -63,6 +63,10 @@ const HoursCard = () => {
           11AM - 9PM
         </span>
       </p>
+      
+      <p className="text-center text-sm md:text-base text-gray-500 mt-4">
+        Kitchen closes 15 minutes before closing
+      </p>
     </div>
   );
 };

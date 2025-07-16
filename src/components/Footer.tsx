@@ -61,6 +61,9 @@ export default function Footer() {
                             <br />
                             11AM - 9PM
                         </p>
+                        <p className="text-s lg:text-sm mt-2 font-thin text-gray-500 dark:text-gray-400">
+                            Kitchen closes 15 minutes before closing
+                        </p>
                     </div>
                   
                 <p className="text-sm text-center md:col-span-4">
