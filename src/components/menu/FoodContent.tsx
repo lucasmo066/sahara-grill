@@ -29,7 +29,6 @@ const FoodContent = () => {
         { name: "Cauliflower", price: "$6.00", description: "Fried florets drizzled with tahini" },
         { name: "Dolmas", price: "$6.00", description: "Stuffed grape leaves with rice and herbs" },
         { name: "Greek Potatoes", price: "$6.00", description: "Oven-roasted potatoes with herbs and spices" },
-        { name: "Potato Chops", price: "$8.00", description: "Stuffed Potato with seasoned ground beef" },
       ],
       variant: "left",
     },
