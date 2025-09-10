@@ -71,7 +71,7 @@ const FoodContent = () => {
         { name: "Grilled Chicken with Tzatziki Sauce", price: "$8.00", description: "Grilled chicken, lettuce, tomatoes, onions, feta cheese and tzatziki sauce" },
         { name: "Falafel Wrap", price: "$8.00", description: "Falafel, lettuce, tomatoes, hummus, and tahini sauce" },
         { name: "Fish Wrap", price: "$8.00", description: "Fried fish, lettuce, tomatoes, and tahini sauce" },
-        { name: "Shrimp Wrap", price: "$8.00", description: "Shrimp, onions, lettuce, tomatoes, and tzatziki sauce" },
+        { name: "Shrimp Wrap", price: "$12.00", description: "Shrimp, onions, lettuce, tomatoes, and tzatziki sauce" },
         { name: "Kufta Wrap", price: "$8.00", description: "Ground beef (Kufta), lettuce, tomatoes, and tahini sauce" },
 
         { name: "Chicken Shawarma Wrap", price: "$8.00", description: "Chicken Shawarma, Garlic Paste, Pickles, and Tomatoes" },
