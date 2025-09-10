@@ -71,6 +71,7 @@ const FoodContent = () => {
         { name: "Grilled Chicken with Tzatziki Sauce", price: "$8.00", description: "Grilled chicken, lettuce, tomatoes, onions, feta cheese and tzatziki sauce" },
         { name: "Falafel Wrap", price: "$8.00", description: "Falafel, lettuce, tomatoes, hummus, and tahini sauce" },
         { name: "Fish Wrap", price: "$8.00", description: "Fried fish, lettuce, tomatoes, and tahini sauce" },
+        { name: "Shrimp Wrap", price: "$8.00", description: "Shrimp, onions, lettuce, tomatoes, and tzatziki sauce" },
         { name: "Kufta Wrap", price: "$8.00", description: "Ground beef (Kufta), lettuce, tomatoes, and tahini sauce" },
 
         { name: "Chicken Shawarma Wrap", price: "$8.00", description: "Chicken Shawarma, Garlic Paste, Pickles, and Tomatoes" },
@@ -81,12 +82,12 @@ const FoodContent = () => {
     },
     {
       title: "Wrap Specials",
-      sectionDescription: "Standard Wraps: Gyro, Chicken with Tzatziki, Chicken Shawarma, Falafel, Fish, Kufta, or Grilled Veggies. Premium Wraps: Beef Shawarma. Sides: Fries, Rice, or Salad Bar. All combos include a Fountain Drink.",
+      sectionDescription: "Standard Wraps: Gyro, Chicken with Tzatziki, Chicken Shawarma, Falafel, Fish, Kufta, or Grilled Veggies. Premium Wraps: Beef Shawarma, Shrimp Wrap. Sides: Fries, Rice, or Salad Bar. All combos include a Fountain Drink.",
       menuItems: [
         { name: "Standard Wrap Combo", price: "$11.00", description: "Any standard wrap with choice of one side and Fountain Drink" },
         { name: "Standard Wrap Combo Deluxe", price: "$12.00", description: "Any standard wrap with choice of 2 sides and Fountain Drink" },
-        { name: "Premium Wrap Combo", price: "$14.00", description: "Beef Shawarma wrap with choice of one side and Fountain Drink" },
-        { name: "Premium Wrap Combo Deluxe", price: "$15.00", description: "Beef Shawarma wrap with choice of 2 sides and Fountain Drink" },
+        { name: "Premium Wrap Combo", price: "$14.00", description: "Beef Shawarma or Shrimp wrap with choice of one side and Fountain Drink" },
+        { name: "Premium Wrap Combo Deluxe", price: "$15.00", description: "Beef Shawarma or Shrimp wrap with choice of 2 sides and Fountain Drink" },
       ],
       variant: "left",
     },
@@ -101,7 +102,6 @@ const FoodContent = () => {
         { name: "Lamb Kabob", price: "$19.00", description: "Marinated lamb skewered and grilled" },
         { name: "Shrimp Kabob", price: "$17.00", description: "Marinated shrimp skewered and grilled"},
         { name: "Veggie Kabob", price: "$13.00", description: "Marinated veggies skewered and grilled" },
-        { name: "Rack of Lamb", price: "$29.00", description: "Marinated lamb chops grilled to perfection" },
       ],
       variant: "left",
     },
