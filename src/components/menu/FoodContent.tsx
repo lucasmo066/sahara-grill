@@ -67,7 +67,7 @@ const FoodContent = () => {
       title: "Wraps",
       imageUrl: "/menu/wrapfront.JPG",
       menuItems: [
-        { name: "Gyro Wrap", price: "$8.00", description: "Lamb, lettuce, tomatoes, onions, feta cheese and tzatziki sauce" },
+        { name: "Gyro Wrap", price: "$8.00", description: "mixture of lamb and beef instead of just lamb , lettuce, tomatoes, onions, feta cheese and tzatziki sauce" },
         { name: "Grilled Chicken with Tzatziki Sauce", price: "$8.00", description: "Grilled chicken, lettuce, tomatoes, onions, feta cheese and tzatziki sauce" },
         { name: "Falafel Wrap", price: "$8.00", description: "Falafel, lettuce, tomatoes, hummus, and tahini sauce" },
         { name: "Fish Wrap", price: "$8.00", description: "Fried fish, lettuce, tomatoes, and tahini sauce" },
