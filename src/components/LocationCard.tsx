@@ -1,9 +1,7 @@
 'use client';
 
-import Link from 'next/link';
 import { useState } from 'react';
 import { Button } from './ui/button';
-import Mapbox from '@/components/Mapbox';
 
 export default function LocationCard() {
   const [addressCopied, setAddressCopied] = useState(false);
@@ -20,9 +18,15 @@ export default function LocationCard() {
         Location
       </h2>
       <div className="items-center justify-center m-5 lg:mx-8 xl:mx-12">
-        {/* mapbox of location goes here */}
-        <div className="h-60 w-full items-center rounded-3xl">
-          <Mapbox />
+        <div className="h-60 w-full items-center rounded-3xl overflow-hidden">
+          <iframe
+            title="Sahara Grill location"
+            src="https://maps.google.com/maps?q=12910+Hwy+92+Suite+105,+Woodstock,+GA+30188&output=embed"
+            className="w-full h-full rounded-3xl border-0"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+          />
         </div>
 
         <div className="items-center justify-center py-8 md:py-12">
