@@ -2,17 +2,18 @@
 
 import { MongoClient } from 'mongodb';
 
-const uri = process.env.MONGODB_URI || 'mongodb+srv://lucasmo066:5BQ1JWcvKRDuf7N8@emails.kgik85p.mongodb.net/SaharaGrill?retryWrites=true&w=majority&appName=Emails';
+const uri = process.env.MONGODB_URI;
+
+if (!uri) {
+  throw new Error('Please add your Mongo URI to .env');
+}
+
 const options = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   connectTimeoutMS: 30000, // 30 seconds
   socketTimeoutMS: 45000, // 45 seconds
 };
-
-if (!process.env.MONGODB_URI) {
-  throw new Error('Please add your Mongo URI to .env.local');
-}
 
 declare global {
   var _mongoClientPromise: Promise<MongoClient>;
