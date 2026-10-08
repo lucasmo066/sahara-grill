@@ -1,74 +1,59 @@
-'use client'
+"use client";
 
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
+import { isRestaurantOpen, openingHours } from "@/lib/hours";
+import { BlurFade } from "@/components/ui/blur-fade";
 
-const HoursCard = () => {
-  const [isOpen, setIsOpen] = useState(false);
+export default function HoursCard() {
+  const [isOpen, setIsOpen] = useState<boolean | null>(null);
 
   useEffect(() => {
-    const checkIfOpen = () => {
-      const now = new Date();
-      const day = now.getDay();
-      const hours = now.getHours();
-      const minutes = now.getMinutes();
-      const time = hours * 100 + minutes;
-
-      if (
-        (day >= 2 && day <= 4 && time >= 1100 && time <= 2000) || // Tuesday - Thursday 11:00 - 20:00
-        ((day === 5 || day === 6) && time >= 1100 && time <= 2100) // Friday - Saturday 11:00 - 21:00
-      ) {
-        setIsOpen(true);
-      } else {
-        setIsOpen(false);
-      }
-    };
-
-    checkIfOpen();
-    const intervalId = setInterval(checkIfOpen, 60000); // Check every minute
-
-    return () => clearInterval(intervalId);
+    const update = () => setIsOpen(isRestaurantOpen());
+    update();
+    const interval = setInterval(update, 60000);
+    return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="col-span-12 md:col-span-5 p-5 xl:p-8 h-[40rem] md:h-[50rem] border-2 border-primary rounded-3xl" id="hours">
-      <h2 className="aladin-regular text-start text-8xl md:text-9xl font-medium mb-10 bg-clip-text text-transparent bg-gradient-to-b from-red-600 to-red-950">
-        Hours
-      </h2>
-      <p className="text-center text-xl md:text-xl font-light mb-2">
-        Join us for lunch and dinner daily!
-      </p>
-      <div className={`mx-10 text-center text-3xl font-semibold my-8 p-4 border-2 rounded-full ${isOpen ? 'text-green-500 border-green-500' : 'text-primary border-primary'}`}>
-        {isOpen ? 'Open' : 'Closed'}
+    <BlurFade
+      as="section"
+      className="bento-card lg:col-span-5"
+      id="hours"
+      aria-labelledby="hours-heading"
+    >
+      <div className="space-y-4">
+        <h2 className="card-heading" id="hours-heading">
+          Hours
+        </h2>
+        <p className="text-left text-muted-foreground">
+          Join us for lunch and dinner!
+        </p>
       </div>
-      <p className="text-center text-2xl md:text-3xl font-semibold mb-6">
-        Sunday - Monday
-        <br />
-        <span className="font-extralight">
-          Closed
-        </span>
-      </p>
-      
-      <p className="text-center text-2xl md:text-3xl font-semibold mb-6">
-        Tuesday - Thursday
-        <br />
-        <span className="font-extralight">
-          11AM - 8PM
-        </span>
-      </p>
-      
-      <p className="text-center text-2xl md:text-3xl font-semibold">
-        Friday - Saturday
-        <br />
-        <span className="font-extralight">
-          11AM - 9PM
-        </span>
-      </p>
-      
-      <p className="text-center text-sm md:text-base text-gray-500 mt-4">
-        Kitchen closes 15 minutes before closing
-      </p>
-    </div>
+      <div className="flex flex-1 flex-col gap-6 text-center">
+        <p
+          role="status"
+          className={`rounded-full border px-4 py-3 text-xl font-semibold ${isOpen ? "border-green-600/50 text-green-700 dark:text-green-400" : "border-primary/40 text-[hsl(var(--heading))]"}`}
+        >
+          {isOpen === null
+            ? "Woodstock, GA hours"
+            : isOpen
+              ? "Open now"
+              : "Currently closed"}
+        </p>
+        <dl className="space-y-5">
+          {openingHours.map(({ days, hours }) => (
+            <div key={days}>
+              <dt className="text-lg font-semibold sm:text-xl">{days}</dt>
+              <dd className="mt-1 text-lg text-muted-foreground">{hours}</dd>
+            </div>
+          ))}
+        </dl>
+        <p className="mt-auto text-sm leading-relaxed text-muted-foreground">
+          Kitchen closes 15 minutes before closing.
+          <br />
+          All times are Eastern.
+        </p>
+      </div>
+    </BlurFade>
   );
-};
-
-export default HoursCard;
+}

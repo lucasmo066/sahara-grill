@@ -1,100 +1,44 @@
-"use client";
-import React, { useState, useRef, useEffect } from "react";
 import { LayoutGrid } from "@/components/ui/layout-grid";
 
-
-export interface Cards {
-    id: number;
-    content: JSX.Element | React.ReactNode | string;
-    className: string;
-    thumbnail: string;
-    }
-
 export function LayoutGridCards() {
-  return (
-    <div className="h-screen pt-2 pb-20 w-full">
-      <LayoutGrid cards={cards} />
-    </div>
-  );
+  return <LayoutGrid cards={cards} />;
 }
 
-const SkeletonOne = () => {
-  return (
-    <div>
-      <p className="font-bold text-4xl text-white">Family Owned and Operated</p>
-      <p className="font-normal text-lg my-4 max-w-lg text-neutral-300">
-        We are a family-owned and operated business that has been serving the
-        community for over a decade. Our goal is to provide our customers with
-        the best possible service and quality products at an affordable price.
-      </p>
-    </div>
-  );
-};
- 
-const SkeletonTwo = () => {
-  return (
-    <div>
-      <p className="font-bold text-4xl text-white">Prepared Fresh</p>
-      <p className="font-normal text-lg my-4 max-w-lg text-neutral-200">
-        All of our dishes are prepared fresh daily using only the finest
-        ingredients. We take pride in the quality of our food and strive to
-        provide our customers with the best possible dining experience.
-      </p>
-    </div>
-  );
-};
-const SkeletonThree = () => {
-  return (
-    <div>
-      <p className="font-bold text-4xl text-white">Authentic Mediterranean</p>
-      <p className="font-normal text-lg my-4 max-w-lg text-neutral-200">
-        Our menu features a wide variety of authentic Mediterranean dishes that
-        are sure to satisfy even the most discerning palate. From our delicious
-        kebabs to our mouth-watering baklava, we have something for everyone.
-      </p>
-    </div>
-  );
-};
-const SkeletonFour = () => {
-  return (
-    <div>
-      <p className="font-bold text-4xl text-white">Friendly Service</p>
-      <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        Our friendly and knowledgeable staff is always ready to help you find
-        the perfect dish to suit your tastes. Whether you are a regular or a
-        first-time visitor, we will make you feel right at home.
-      </p>
-    </div>
-  );
-};
- 
 const cards = [
   {
     id: 1,
-    content: <SkeletonOne />,
-    className: "md:col-span-2 cursor-pointer",
-    thumbnail:
-      "/menu/outsideside.JPG",
+    title: "Family Owned and Operated",
+    description:
+      "We are a family-owned and operated business that has been serving the community for over a decade. Our goal is to provide our customers with the best possible service and quality products at an affordable price.",
+    className: "md:col-span-2",
+    thumbnail: "/menu/outsideside.JPG",
+    alt: "The Sahara Grill restaurant exterior",
   },
   {
     id: 2,
-    content: <SkeletonTwo />,
-    className: "col-span-1 cursor-pointer",
-    thumbnail:
-      "/menu/kuftalambchickenlampgreen.JPG",
+    title: "Prepared Fresh",
+    description:
+      "All of our dishes are prepared fresh daily using only the finest ingredients. We take pride in the quality of our food and strive to provide our customers with the best possible dining experience.",
+    className: "",
+    thumbnail: "/menu/kuftalambchickenlampgreen.JPG",
+    alt: "Freshly prepared kebab platter",
   },
   {
     id: 3,
-    content: <SkeletonThree />,
-    className: "col-span-1 cursor-pointer",
-    thumbnail:
-      "/menu/plattertop.JPG",
+    title: "Authentic Mediterranean",
+    description:
+      "Our menu features a wide variety of authentic Mediterranean dishes that are sure to satisfy even the most discerning palate. From our delicious kebabs to our mouth-watering baklava, we have something for everyone.",
+    className: "",
+    thumbnail: "/menu/plattertop.JPG",
+    alt: "A Mediterranean platter with pita and sides",
   },
   {
     id: 4,
-    content: <SkeletonFour />,
-    className: "md:col-span-2 cursor-pointer",
-    thumbnail:
-      "/menu/ambiancelamp.JPG",
+    title: "Friendly Service",
+    description:
+      "Our friendly and knowledgeable staff is always ready to help you find the perfect dish to suit your tastes. Whether you are a regular or a first-time visitor, we will make you feel right at home.",
+    className: "md:col-span-2",
+    thumbnail: "/menu/ambiancelamp.JPG",
+    alt: "Warm lighting inside Sahara Grill",
   },
 ];

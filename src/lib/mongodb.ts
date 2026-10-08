@@ -1,36 +1,25 @@
-// lib/mongodb.ts
-
-import { MongoClient } from 'mongodb';
-
-const uri = process.env.MONGODB_URI;
-
-if (!uri) {
-  throw new Error('Please add your Mongo URI to .env');
-}
-
-const options = {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  connectTimeoutMS: 30000, // 30 seconds
-  socketTimeoutMS: 45000, // 45 seconds
-};
+import { MongoClient } from "mongodb";
 
 declare global {
-  var _mongoClientPromise: Promise<MongoClient>;
+  var _mongoClientPromise: Promise<MongoClient> | undefined;
 }
 
-let client: MongoClient;
-let clientPromise: Promise<MongoClient>;
-
-if (process.env.NODE_ENV === 'development') {
+/** Connect only when a signup arrives, never while Next.js builds the site. */
+export function getMongoClient(): Promise<MongoClient> {
   if (!global._mongoClientPromise) {
-    client = new MongoClient(uri, options);
-    global._mongoClientPromise = client.connect();
-  }
-  clientPromise = global._mongoClientPromise;
-} else {
-  client = new MongoClient(uri, options);
-  clientPromise = client.connect();
-}
+    const uri = process.env.MONGODB_URI;
+    if (!uri) throw new Error("Newsletter storage is not configured.");
 
-export default clientPromise;
+    const client = new MongoClient(uri, {
+      serverSelectionTimeoutMS: 5000,
+      connectTimeoutMS: 5000,
+      socketTimeoutMS: 10000,
+    });
+    global._mongoClientPromise = client.connect().catch(async (error) => {
+      global._mongoClientPromise = undefined;
+      await client.close().catch(() => {});
+      throw error;
+    });
+  }
+  return global._mongoClientPromise;
+}

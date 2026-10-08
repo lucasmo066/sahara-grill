@@ -1,76 +1,87 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
+import { openingHours } from "@/lib/hours";
 
 export default function Footer() {
-    return (
-        <footer className="dark:bg-neutral-900 bg-zinc-100 text-black dark:text-white">
-            <div className="container mx-auto py-10">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-                    {/* Logo Section */}
-                    <div className="flex flex-col items-center justify-center mb-4 md:mb-0 md:col-span-4">
-                        <Image
-                            src="/saharagrillgray.svg"
-                            alt="logo"
-                            width={200}
-                            height={200}
-                        />
-                    </div>
-                    {/* Links Section */}
-                    <div className="flex flex-row items-center justify-center gap-8 mb-4 md:mb-0 md:col-span-4 lg:order-first">
-                        <Link href="/menu">
-                            <p className="text-lg lg:text-xl">Menu</p>
-                        </Link>
-                        <Link href="/about">
-                            <p className="text-lg lg:text-xl">About</p>
-                        </Link>
-                        <Link href="/#catering">
-                            <p className="text-lg lg:text-xl">Catering</p>
-                        </Link>
-                        <Link href="/sitemap">
-                            <p className="text-lg lg:text-xl">Sitemap</p>
-                        </Link>
-                    </div>
-                    {/* Contact Section */}
-                    <div className="flex flex-col items-center text-center mb-4 md:mb-0 md:col-span-2">
-                        <p className="text-lg lg:text-xl font-bold">Contact Us</p>
-                        <p className="text-md lg:text-lg mt-2 font-thin">470-787-2200</p>
-                        <p className="text-sm lg:text-md mt-2 font-thin">
-                            12910 Highway 92
-                            <br />
-                            Suite 105
-                            <br />
-                            Woodstock, Georgia 30188
-                        </p>
-                    </div>
-                   
-                    {/* Hours Section */}
-                    <div className="flex flex-col items-center text-center mb-4 md:mb-0 md:col-span-2">
-                        <p className="text-lg lg:text-xl font-bold">Hours</p>
-                        <p className="text-md lg:text-lg mt-2 font-thin">
-                            Sunday - Monday
-                            <br />
-                            Closed
-                        </p>
-                        <p className="text-md lg:text-lg mt-2 font-thin">
-                            Tuesday - Thursday
-                            <br />
-                            11AM - 8PM
-                        </p>
-                        <p className="text-md lg:text-lg mt-2 font-thin">
-                            Friday - Saturday
-                            <br />
-                            11AM - 9PM
-                        </p>
-                        <p className="text-s lg:text-sm mt-2 font-thin text-gray-500 dark:text-gray-400">
-                            Kitchen closes 15 minutes before closing
-                        </p>
-                    </div>
-                  
-                <p className="text-sm text-center md:col-span-4">
-                    &copy; 2024 The Sahara Grill. All rights reserved.
-                </p>
+  return (
+    <footer className="border-t border-border bg-muted/40">
+      <div className="site-container space-y-10 py-12 sm:py-16">
+        <div className="grid gap-10 text-center md:grid-cols-3 md:text-left">
+          <div className="flex flex-col items-center gap-6 md:items-start">
+            <Link href="/" aria-label="Sahara Grill home">
+              <Image
+                src="/saharagrillgray.svg"
+                alt="The Sahara Grill"
+                width={200}
+                height={140}
+                className="h-auto w-44 dark:brightness-0 dark:invert"
+              />
+            </Link>
+            <nav
+              aria-label="Footer navigation"
+              className="flex flex-wrap justify-center gap-x-6 gap-y-3 md:justify-start"
+            >
+              <Link className="hover:underline" href="/menu">
+                Menu
+              </Link>
+              <Link className="hover:underline" href="/about">
+                About
+              </Link>
+              <Link className="hover:underline" href="/#catering">
+                Catering
+              </Link>
+              <Link className="hover:underline" href="/sitemap">
+                Sitemap
+              </Link>
+            </nav>
+          </div>
+          <div className="space-y-4">
+            <h2 className="text-lg font-semibold">Contact Us</h2>
+            <p>
+              <a
+                href="tel:470-787-2200"
+                className="underline-offset-4 hover:underline"
+              >
+                470-787-2200
+              </a>
+            </p>
+            <address className="not-italic leading-7 text-muted-foreground">
+              12910 Highway 92
+              <br />
+              Suite 105
+              <br />
+              Woodstock, Georgia 30188
+            </address>
+            <p className="text-sm text-muted-foreground">
+              Catering:{" "}
+              <a
+                href="tel:770-926-3446"
+                className="underline-offset-4 hover:underline"
+              >
+                770-926-3446
+              </a>
+            </p>
+          </div>
+          <div className="space-y-4">
+            <h2 className="text-lg font-semibold">Hours</h2>
+            <dl className="space-y-3 text-sm leading-6">
+              {openingHours.map(({ days, hours }) => (
+                <div key={days}>
+                  <dt className="font-medium">{days}</dt>
+                  <dd className="text-muted-foreground">{hours}</dd>
                 </div>
-            </div>
-        </footer>
-    );
+              ))}
+            </dl>
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              Kitchen closes 15 minutes before closing.
+            </p>
+          </div>
+        </div>
+        <p className="border-t border-border pt-6 text-center text-sm text-muted-foreground">
+          &copy; {new Date().getFullYear()} The Sahara Grill. All rights
+          reserved.
+        </p>
+      </div>
+    </footer>
+  );
 }

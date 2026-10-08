@@ -1,31 +1,28 @@
-// app/api/emails/route.ts
+import { NextRequest, NextResponse } from "next/server";
+import { z } from "zod";
+import { getMongoClient } from "@/lib/mongodb";
 
-import { NextRequest, NextResponse } from 'next/server';
-import clientPromise from '@/lib/mongodb';
+const signupSchema = z.object({ email: z.string().trim().email().max(254) });
 
 export async function POST(req: NextRequest) {
-  const { email } = await req.json();
-  const client = await clientPromise;
-  const db = client.db('SaharaGrill');
-
   try {
-    const collection = db.collection('Emails');
-    const result = await collection.insertOne({ email, createdAt: new Date() });
-    return NextResponse.json({ message: 'Email saved successfully!', result }, { status: 200 });
+    const signup = signupSchema.safeParse(await req.json());
+    if (!signup.success) {
+      return NextResponse.json({ message: "Enter a valid email address." }, { status: 400 });
+    }
+
+    const client = await getMongoClient();
+    await client.db("SaharaGrill").collection("Emails").insertOne({
+      email: signup.data.email.toLowerCase(),
+      createdAt: new Date(),
+    });
+    return NextResponse.json({ message: "Email saved successfully!" });
   } catch (error) {
-    return NextResponse.json({ message: 'Error saving email', error }, { status: 500 });
+    if (error instanceof SyntaxError) {
+      return NextResponse.json({ message: "Invalid request." }, { status: 400 });
+    }
+    return NextResponse.json({ message: "Signups are temporarily unavailable. Please try again later." }, { status: 503 });
   }
 }
 
-export async function GET() {
-  const client = await clientPromise;
-  const db = client.db('SaharaGrill');
-
-  try {
-    const collection = db.collection('Emails');
-    const emails = await collection.find({}).toArray();
-    return NextResponse.json(emails, { status: 200 });
-  } catch (error) {
-    return NextResponse.json({ message: 'Error fetching emails', error }, { status: 500 });
-  }
-}
+// Subscriber addresses are private; no public GET/list endpoint is exposed.

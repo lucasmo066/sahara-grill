@@ -7,14 +7,16 @@ export const menuSection = defineType({
   fields: [
     defineField({
       name: "title",
-      title: "Title",
+      title: "Section title",
       type: "string",
+      description: "Category heading on the menu page (for example, Wraps).",
       validation: (rule) => rule.required(),
     }),
     defineField({
       name: "menuType",
-      title: "Menu Type",
+      title: "Food or Drinks",
       type: "string",
+      description: "Controls which tab this section appears under.",
       options: {
         list: [
           { title: "Food", value: "food" },
@@ -26,24 +28,46 @@ export const menuSection = defineType({
     }),
     defineField({
       name: "sectionDescription",
-      title: "Section Description",
+      title: "Section note",
       type: "text",
       rows: 3,
+      description:
+        "Optional note under the title (sides, upcharges, serving info).",
     }),
     defineField({
       name: "image",
-      title: "Image",
+      title: "Section photo",
       type: "image",
+      description: "Optional photo shown beside this section.",
       options: { hotspot: true },
+      fields: [
+        defineField({
+          name: "alt",
+          title: "Photo description (alt text)",
+          type: "string",
+          description:
+            "Short description for accessibility and SEO. Example: Hummus and pita.",
+          validation: (rule) =>
+            rule.custom((value, context) => {
+              const parent = context.parent as { asset?: unknown } | undefined;
+              if (parent?.asset && !value) {
+                return "Add a short photo description when an image is uploaded.";
+              }
+              return true;
+            }),
+        }),
+      ],
     }),
     defineField({
       name: "variant",
-      title: "Layout Variant",
+      title: "Photo alignment",
       type: "string",
+      description:
+        "Image left or image right. Keep the current layout unless you intentionally want to change it.",
       options: {
         list: [
-          { title: "Image Left", value: "left" },
-          { title: "Image Right", value: "right" },
+          { title: "Photo on the left", value: "left" },
+          { title: "Photo on the right", value: "right" },
         ],
         layout: "radio",
       },
@@ -52,56 +76,38 @@ export const menuSection = defineType({
     }),
     defineField({
       name: "sortOrder",
-      title: "Sort Order",
+      title: "Section order",
       type: "number",
-      description: "Lower numbers appear first within Food or Drinks.",
+      description:
+        "Lower numbers appear first within Food or Drinks. Use 0, 1, 2…",
       validation: (rule) => rule.required().integer().min(0),
     }),
     defineField({
+      name: "isVisible",
+      title: "Show on website",
+      type: "boolean",
+      description:
+        "Turn off to hide the whole section without deleting it. Drafts stay private until Publish.",
+      initialValue: true,
+    }),
+    defineField({
       name: "menuItems",
-      title: "Menu Items",
+      title: "Items in this section",
       type: "array",
-      of: [
-        defineArrayMember({
-          type: "object",
-          name: "menuItem",
-          title: "Menu Item",
-          fields: [
-            defineField({
-              name: "name",
-              title: "Name",
-              type: "string",
-              validation: (rule) => rule.required(),
-            }),
-            defineField({
-              name: "price",
-              title: "Price",
-              type: "string",
-              description: 'e.g. "$8.00" or "$8.00 / $29.00"',
-              validation: (rule) => rule.required(),
-            }),
-            defineField({
-              name: "description",
-              title: "Description",
-              type: "text",
-              rows: 2,
-            }),
-          ],
-          preview: {
-            select: {
-              title: "name",
-              subtitle: "price",
-            },
-          },
-        }),
-      ],
+      description:
+        "Drag to reorder. Item order here is the order guests see on the website.",
+      of: [defineArrayMember({ type: "menuItem" })],
+      validation: (rule) => rule.min(1).error("Add at least one menu item."),
     }),
   ],
   orderings: [
     {
-      title: "Sort Order",
+      title: "Section order",
       name: "sortOrderAsc",
-      by: [{ field: "sortOrder", direction: "asc" }],
+      by: [
+        { field: "menuType", direction: "asc" },
+        { field: "sortOrder", direction: "asc" },
+      ],
     },
   ],
   preview: {
@@ -110,11 +116,15 @@ export const menuSection = defineType({
       menuType: "menuType",
       media: "image",
       sortOrder: "sortOrder",
+      isVisible: "isVisible",
+      itemCount: "menuItems",
     },
-    prepare({ title, menuType, media, sortOrder }) {
+    prepare({ title, menuType, media, sortOrder, isVisible, itemCount }) {
+      const count = Array.isArray(itemCount) ? itemCount.length : 0;
+      const hidden = isVisible === false ? " · hidden" : "";
       return {
         title,
-        subtitle: `${menuType ?? "?"} · #${sortOrder ?? "?"}`,
+        subtitle: `${menuType ?? "?"} · order ${sortOrder ?? "?"} · ${count} items${hidden}`,
         media,
       };
     },

@@ -1,56 +1,74 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Button } from './ui/button';
+import { useState } from "react";
+import { Button } from "./ui/button";
+import { BlurFade } from "@/components/ui/blur-fade";
 
 export default function LocationCard() {
-  const [addressCopied, setAddressCopied] = useState(false);
+  const [copyState, setCopyState] = useState<"idle" | "copied" | "error">(
+    "idle",
+  );
 
-  const handleCopyAddress = () => {
-    navigator.clipboard.writeText("12910 Hwy 92 Suite 105 Woodstock, GA 30188");
-    setAddressCopied(true);
-    setTimeout(() => setAddressCopied(false), 3000); // Reset after 3 seconds
+  const handleCopyAddress = async () => {
+    try {
+      await navigator.clipboard.writeText(
+        "12910 Hwy 92 Suite 105 Woodstock, GA 30188",
+      );
+      setCopyState("copied");
+    } catch {
+      setCopyState("error");
+    }
   };
 
   return (
-    <div className="col-span-12 md:col-span-7 p-5 h-[40rem] md:h-[50rem] border-2 border-primary rounded-3xl" id="location">
-      <h2 className="aladin-regular text-start text-8xl md:text-9xl font-medium mb-10 bg-clip-text text-transparent bg-gradient-to-b from-red-600 to-red-950">
+    <BlurFade
+      as="section"
+      className="bento-card lg:col-span-7"
+      id="location"
+      aria-labelledby="location-heading"
+    >
+      <h2 className="card-heading" id="location-heading">
         Location
       </h2>
-      <div className="items-center justify-center m-5 lg:mx-8 xl:mx-12">
-        <div className="h-60 w-full items-center rounded-3xl overflow-hidden">
-          <iframe
-            title="Sahara Grill location"
-            src="https://maps.google.com/maps?q=12910+Hwy+92+Suite+105,+Woodstock,+GA+30188&output=embed"
-            className="w-full h-full rounded-3xl border-0"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            allowFullScreen
-          />
-        </div>
-
-        <div className="items-center justify-center py-8 md:py-12">
-          <p className="text-xl md:text-2xl lg:text-3xl font-light">
-            12910 Hwy 92
-            <br />
-            Suite 105
+      <div className="flex flex-1 flex-col gap-6 text-center">
+        <iframe
+          title="Sahara Grill location"
+          src="https://maps.google.com/maps?q=12910+Hwy+92+Suite+105,+Woodstock,+GA+30188&output=embed"
+          className="min-h-56 w-full flex-1 rounded-2xl border-0"
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          allowFullScreen
+        />
+        <address className="text-lg not-italic leading-relaxed sm:text-xl">
+          12910 Hwy 92, Suite 105
+          <br />
+          Woodstock, GA 30188
+        </address>
+        <div>
+          <div className="flex flex-wrap justify-center gap-3">
+            <Button asChild>
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=12910+Hwy+92+Suite+105+Woodstock+GA+30188"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Get Directions
+              </a>
+            </Button>
+            <Button onClick={handleCopyAddress} variant="outline">
+              {copyState === "copied" ? "Address Copied!" : "Copy Address"}
+            </Button>
+          </div>
+          <p className="sr-only" role="status">
+            {copyState === "copied" ? "Address copied to clipboard." : ""}
           </p>
-          <p className="text-xl md:text-2xl lg:text-3xl font-light">
-            Woodstock, GA 30188
-          </p>
-          <Button
-            onClick={handleCopyAddress}
-            variant="outline"
-            className={`m-5 px-10 py-6 lg:m-10 ${
-              addressCopied
-                ? 'bg-green-500 text-white border-green-500 hover:bg-green-500 hover:text-white'
-                : 'border-2 border-primary text-primary hover:bg-primary hover:text-white'
-            }`}
-          >
-            {addressCopied ? 'Address Copied!' : 'Copy Address'}
-          </Button>
+          {copyState === "error" && (
+            <p className="mt-3 text-sm text-muted-foreground" role="status">
+              Unable to copy automatically. Please select the address above.
+            </p>
+          )}
         </div>
       </div>
-    </div>
+    </BlurFade>
   );
 }

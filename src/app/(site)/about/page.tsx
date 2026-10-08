@@ -1,100 +1,87 @@
-'use client';
+import type { Metadata } from "next";
+import Image from "next/image";
+import { BlurFade } from "@/components/ui/blur-fade";
 
-import Head from 'next/head';
-import { AnimatedTooltipPreview } from '@/components/StaffTooltip';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
+export const metadata: Metadata = {
+  title: "About Us | The Sahara Grill",
+  description:
+    "Learn about the family behind Sahara Grill and our dedication to fresh Mediterranean cuisine in Woodstock, GA.",
+};
 
 export default function AboutPage() {
   return (
-    <>
-      <Head>
-        <title>About Us - The Sahara Grill</title>
-        <meta
-          name="description"
-          content="Learn more about the family behind Sahara Grill, our history, and our dedication to serving fresh, delicious Mediterranean cuisine in Woodstock, GA."
-        />
-      </Head>
-      <main className="flex flex-col items-center min-h-screen py-10 px-6 lg:px-20">
-        <motion.h1
-          className="aladin-regular text-center text-8xl md:text-9xl font-medium mb-12 bg-clip-text text-transparent bg-gradient-to-b from-red-600 to-red-950"
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          About Us
-        </motion.h1>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
-            className="flex justify-center"
-          >
-            <Image
-              src="/menu/outsidesignfront.JPG"
-              alt="Picture of the Edwar family working together at The Sahara Grill"
-              width={600}
-              height={600}
-              className="w-[40rem] h-[30rem] lg:w-full lg:h-auto object-cover rounded-3xl"
-              priority // Makes the image load faster
-            />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl font-light text-center lg:text-left"
-          >
-            <p className="mb-6">
-              The Sahara Grill is a family-owned and operated restaurant located in Woodstock, Georgia. Our family has been serving the Woodstock community for over 20 years, and we take pride in providing our customers with delicious, authentic Mediterranean cuisine in a warm and welcoming atmosphere.
-            </p>
+    <main
+      id="main-content"
+      className="site-container section-space space-y-10 sm:space-y-14"
+    >
+      <BlurFade>
+        <h1 className="section-heading text-center">About Us</h1>
+      </BlurFade>
+      <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
+        <BlurFade direction="left">
+          <Image
+            src="/menu/outsidesignfront.JPG"
+            alt="The Sahara Grill storefront in Woodstock, Georgia"
+            width={800}
+            height={600}
+            sizes="(min-width: 1280px) 584px, (min-width: 1024px) 45vw, 100vw"
+            className="card-media aspect-[4/3]"
+            priority
+          />
+        </BlurFade>
+        <div className="space-y-6 text-base leading-8 text-muted-foreground sm:text-lg">
+          <BlurFade direction="right">
             <p>
-              Our menu features a wide variety of Mediterranean dishes, including falafel, shawarma, kebabs, and more. We use only the freshest ingredients and traditional cooking methods to ensure that every dish is bursting with flavor. Whether you&apos;re looking for a quick and healthy lunch or a hearty dinner, we have something for everyone.
+              The Sahara Grill is a family-owned and operated restaurant located
+              in Woodstock, Georgia. Our family has been serving the Woodstock
+              community for over 20 years, and we take pride in providing our
+              customers with delicious, authentic Mediterranean cuisine in a
+              warm and welcoming atmosphere.
             </p>
-          </motion.div>
+          </BlurFade>
+          <BlurFade direction="right">
+            <p>
+              Our menu features a wide variety of Mediterranean dishes,
+              including falafel, shawarma, kebabs, and more. We use only the
+              freshest ingredients and traditional cooking methods to ensure
+              that every dish is bursting with flavor. Whether you&apos;re
+              looking for a quick and healthy lunch or a hearty dinner, we have
+              something for everyone.
+            </p>
+          </BlurFade>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 mt-16 items-center">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex justify-center"
-          >
-            <Image
-              src="/menu/falafelpitaclose.JPG"
-              alt="Picture of a falafel pita sandwich from The Sahara Grill"
-              width={600}
-              height={400}
-              className="w-[40rem] h-[30rem] lg:w-full lg:h-auto object-cover rounded-3xl"
-              priority
-            />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex justify-center lg:justify-end"
-          >
-            <Image
-              src="/menu/ambianceiraq.JPG"
-              alt="Picture of the inside of The Sahara Grill"
-              width={600}
-              height={400}
-              className="w-[40rem] h-[30rem] lg:w-full lg:h-auto object-cover rounded-3xl"
-              priority
-            />
-          </motion.div>
-        </div>
-        <motion.p
-          className="text-xl font-light text-center md:mx-20 mt-16 mb-20"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-        >
-          Authentic Mediterranean cuisine isn&apos;t the only thing we&apos;re known for. Our warm and inviting atmosphere makes The Sahara Grill the perfect place to relax and enjoy a meal with family and friends. Whether you&apos;re dining in our cozy restaurant or taking your meal to go, you&apos;ll always feel welcome at The Sahara Grill.
-        </motion.p>
-      </main>
-    </>
+      </div>
+      <div className="grid gap-6 sm:grid-cols-2">
+        <BlurFade direction="left">
+          <Image
+            src="/menu/falafelpitaclose.JPG"
+            alt="A freshly prepared falafel pita"
+            width={800}
+            height={600}
+            sizes="(min-width: 1280px) 596px, (min-width: 640px) 45vw, 100vw"
+            className="card-media aspect-[4/3]"
+          />
+        </BlurFade>
+        <BlurFade direction="right">
+          <Image
+            src="/menu/ambianceiraq.JPG"
+            alt="The dining room at Sahara Grill"
+            width={800}
+            height={600}
+            sizes="(min-width: 1280px) 596px, (min-width: 640px) 45vw, 100vw"
+            className="card-media aspect-[4/3]"
+          />
+        </BlurFade>
+      </div>
+      <BlurFade className="mx-auto max-w-3xl text-center text-base leading-8 text-muted-foreground sm:text-lg">
+        <p>
+          Authentic Mediterranean cuisine isn&apos;t the only thing we&apos;re
+          known for. Our warm and inviting atmosphere makes The Sahara Grill the
+          perfect place to relax and enjoy a meal with family and friends.
+          Whether you&apos;re dining in our cozy restaurant or taking your meal
+          to go, you&apos;ll always feel welcome at The Sahara Grill.
+        </p>
+      </BlurFade>
+    </main>
   );
 }

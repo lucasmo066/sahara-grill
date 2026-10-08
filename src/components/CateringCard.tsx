@@ -1,44 +1,43 @@
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { Button } from './ui/button';
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "./ui/button";
+import { BlurFade } from "@/components/ui/blur-fade";
 
-const CateringCard = () => {
+export default function CateringCard() {
   return (
-    <div className="col-span-12 md:col-span-5 p-5 xl:p-8 h-[50rem] md:h-[60rem] border-2 border-primary rounded-3xl" id="cateringcard">
-      <h2 className="aladin-regular text-start text-8xl lg:text-9xl font-medium pb-3 bg-clip-text text-transparent bg-gradient-to-b from-red-600 to-red-950">
+    <BlurFade
+      as="section"
+      className="bento-card lg:col-span-5"
+      id="cateringcard"
+      aria-labelledby="catering-card-heading"
+    >
+      <h2 className="card-heading" id="catering-card-heading">
         Catering
       </h2>
-      <div className="flex flex-col mb-6 p-4">
-        <p className="text-center text-xl font-light mb-2">
+      <Image
+        src="/menu/ambiancetable.JPG"
+        alt="Mediterranean platters and pita served at Sahara Grill"
+        width={800}
+        height={600}
+        sizes="(min-width: 1280px) 440px, (min-width: 768px) 45vw, 90vw"
+        className="card-media aspect-[4/3] max-h-80 lg:h-72 xl:h-80"
+      />
+      <div className="flex flex-1 flex-col items-start gap-4 text-left">
+        <h3 className="text-xl font-semibold sm:text-2xl">
           Let us cater your next event!
-        </p>
-        <p className="text-center text-2xl md:text-3xl font-semibold mb-6">
+        </h3>
+        <p className="max-w-md leading-relaxed text-muted-foreground">
           Questions about an upcoming event? Do not hesitate to call us!
         </p>
-        <Image
-          src="/menu/ambiancetable.JPG"
-          alt="Catering event"
-          width={400}
-          height={400}
-          className="rounded-3xl object-cover h-[20rem] w-[30rem] xl:h-[25rem] lg:w-[40rem] mx-auto"
-        />
-        <div className="text-center text-3xl font-semibold p-2 md:pt-5 rounded-3xl">
-          <Link href="tel:770-926-3446">
-            <Button variant="outline" className="border-2 border-primary text-primary m-3 px-10 py-4 md:px-12 md:py-6 hover:bg-primary hover:text-white">
-              Set up an event
-            </Button>
-          </Link>
-          <Link href="#catering">
-            <Button className="text-white px-14 py-4 md:px-14 lg:px-12 md:py-6 hover:bg-rose-700 hover:text-white
-             hover:border-rose-700">
-              Learn More
-            </Button>
-          </Link>
+        <div className="mt-auto flex w-full flex-wrap justify-center gap-3 pt-2">
+          <Button asChild variant="outline">
+            <a href="tel:770-926-3446">Set up an event</a>
+          </Button>
+          <Button asChild>
+            <Link href="#catering">Learn More</Link>
+          </Button>
         </div>
       </div>
-    </div>
+    </BlurFade>
   );
-};
-
-export default CateringCard;
+}

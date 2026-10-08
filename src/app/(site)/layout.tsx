@@ -11,7 +11,7 @@ export default function SiteLayout({
   return (
     <ThemeProvider
       attribute="class"
-      defaultTheme="dark"
+      defaultTheme="system"
       enableSystem
       disableTransitionOnChange
     >

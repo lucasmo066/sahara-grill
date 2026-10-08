@@ -1,122 +1,140 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { useEffect, useRef, useState } from "react";
+import { Menu, X } from "lucide-react";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 import ModeToggle from "@/components/ui/toggle-mode";
 import { Button } from "./ui/button";
-import Image from 'next/image';
-import Link from 'next/link';
+
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/menu", label: "Menu" },
+  { href: "/about", label: "About" },
+  { href: "/#catering", label: "Catering" },
+];
+const orderUrl =
+  "https://order.toasttab.com/online/the-sahara-grill-12910-georgia-92";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
+  const headerRef = useRef<HTMLElement>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
-    if (menuOpen) {
-      document.body.classList.add('overflow-hidden');
-    } else {
-      document.body.classList.remove('overflow-hidden');
-    }
+    if (!menuOpen) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const desktop = window.matchMedia("(min-width: 768px)");
+    const closeOnDesktop = () => {
+      if (desktop.matches) setMenuOpen(false);
+    };
+    const closeOnFocusOutside = (event: FocusEvent) => {
+      if (!headerRef.current?.contains(event.target as Node))
+        setMenuOpen(false);
+    };
+
+    desktop.addEventListener("change", closeOnDesktop);
+    document.addEventListener("focusin", closeOnFocusOutside);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      desktop.removeEventListener("change", closeOnDesktop);
+      document.removeEventListener("focusin", closeOnFocusOutside);
+    };
   }, [menuOpen]);
 
   return (
-    <header>
-      <nav className="flex flex-row justify-evenly items-center p-4">
-        <div className="hidden md:flex items-center sm:gap-2 lg:gap-10">
-          <Link href="/">
-            <Image
-              src="/navigation/home.png"
-              alt="Home"
-              width={100}
-              height={100}
-            />
-          </Link>
-          <Link href="/menu">
-            <Image
-              src="/navigation/menu.png"
-              alt="Menu"
-              width={100}
-              height={100}
-            />
-          </Link>
-          <Link href="/about">
-            <Image
-              src="/navigation/about.png"
-              alt="About Us"
-              width={100}
-              height={100}
-            />
-          </Link>
-          <Link href="/#catering">
-            <Image
-              src="/navigation/privateEvents.png"
-              alt="Catering"
-              width={100}
-              height={100}
-            />
-          </Link>
-        </div>
-       
-        <div className="flex items-center gap-4 py-4">
-          <div className="md:hidden flex items-center">
-            <Menu className="w-14 h-14 font-extralight mr-4 text-primary cursor-pointer" onClick={toggleMenu} />
+    <header
+      ref={headerRef}
+      className="sticky top-0 z-40 border-b border-border bg-background md:relative md:top-auto"
+    >
+      {menuOpen && (
+        <div
+          aria-hidden="true"
+          className="fixed inset-0 bg-black/10 backdrop-blur-[2px] md:hidden"
+          onClick={() => setMenuOpen(false)}
+        />
+      )}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-background focus:p-4"
+      >
+        Skip to content
+      </a>
+      <nav
+        aria-label="Main navigation"
+        className="site-container relative py-4 md:py-6"
+        onKeyDown={(event) => {
+          if (event.key === "Escape") {
+            setMenuOpen(false);
+            document.getElementById("navigation-toggle")?.focus();
+          }
+        }}
+      >
+        <div className="flex items-center justify-between gap-3">
+          <div className="hidden items-center gap-6 md:flex lg:gap-10">
+            {links.map(({ href, label }) => (
+              <Link
+                key={href}
+                href={href}
+                aria-current={pathname === href ? "page" : undefined}
+                className="aladin-regular text-3xl text-[hsl(var(--heading))] underline-offset-8 hover:underline aria-[current=page]:underline"
+              >
+                {label}
+              </Link>
+            ))}
           </div>
-          <ModeToggle />
-          <div className="flex flex-row gap-2 md:gap-4">
-            <Link href="https://order.toasttab.com/online/the-sahara-grill-12910-georgia-92?diningOption=delivery&rwg9TEAjTKr8FgdHbPKEb8n0O8cMMCDccL1w%3D%3Dtoken=ACgRB3cAeVD-eatrJT8rDNZNpHkiGyEFYHYRw-QZ5zWn6zUVO92nTSVE4ZwMs4Cxr" target="_blank">
-              <Button variant="outline" className="border-2 border-primary text-primary px-6 my-2 md:py-4 md:px-10 md:my-0 lg:py-4 lg:px-12 hover:bg-primary hover:text-white">Delivery</Button>
-            </Link>
-            <Link href="https://order.toasttab.com/online/the-sahara-grill-12910-georgia-92" target="_blank">
-              <Button variant="outline" className="border-2 border-primary text-primary px-6 my-2 md:py-4 md:px-10 md:my-0 lg:py-4 lg:px-12 hover:bg-primary hover:text-white">Takeout</Button>
-            </Link>
+          <Button
+            id="navigation-toggle"
+            variant="ghost"
+            size="icon"
+            className="text-[hsl(var(--heading))] md:hidden"
+            aria-label={menuOpen ? "Close navigation" : "Open navigation"}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-navigation"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            {menuOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
+          </Button>
+          <div className="flex items-center gap-2 sm:gap-3">
+            <ModeToggle />
+            <Button asChild variant="outline" className="px-3 sm:px-5">
+              <a
+                href={`${orderUrl}?diningOption=delivery`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Delivery
+              </a>
+            </Button>
+            <Button asChild className="px-3 sm:px-5">
+              <a href={orderUrl} target="_blank" rel="noopener noreferrer">
+                Takeout
+              </a>
+            </Button>
+          </div>
+        </div>
+        <div
+          id="mobile-navigation"
+          hidden={!menuOpen}
+          className="mobile-nav-glass absolute inset-x-4 top-[calc(100%_+_0.5rem)] rounded-2xl border p-4 sm:inset-x-6 md:hidden"
+        >
+          <div className="grid grid-cols-2 gap-2">
+            {links.map(({ href, label }) => (
+              <Link
+                key={href}
+                href={href}
+                onClick={() => setMenuOpen(false)}
+                aria-current={pathname === href ? "page" : undefined}
+                className="rounded-lg bg-background/60 px-4 py-3 text-lg font-medium text-foreground transition-colors hover:bg-background/80 aria-[current=page]:bg-background/90 aria-[current=page]:text-[hsl(var(--heading))]"
+              >
+                {label}
+              </Link>
+            ))}
           </div>
         </div>
       </nav>
-
-      {menuOpen && (
-        <div className="fixed inset-0 dark:bg-black dark:bg-opacity-90 bg-zinc-200 bg-opacity-90 flex flex-col items-start justify-center z-50">
-          <div className="absolute bottom-6 right-14">
-            <X className="w-20 h-20 m-10 dark:text-white text-primary cursor-pointer" onClick={toggleMenu} />
-          </div>
-          <div className="flex flex-col items-start gap-6 m-20">
-            <Link href="/" onClick={toggleMenu}>
-              <Image
-                src="/navigation/home.png"
-                alt="Home"
-                width={130}
-                height={130}
-              />
-            </Link>
-            <Link href="/menu" onClick={toggleMenu}>
-              <Image
-                src="/navigation/menu.png"
-                alt="Menu"
-                width={130}
-                height={130}
-              />
-            </Link>
-            <Link href="/about" onClick={toggleMenu}>
-              <Image
-                src="/navigation/about.png"
-                alt="About"
-                width={130}
-                height={130}
-              />
-            </Link>
-            <Link href="/#catering" onClick={toggleMenu}>
-              <Image
-                src="/navigation/privateEvents.png"
-                alt="Catering"
-                width={130}
-                height={130}
-              />
-            </Link>
-          </div>
-        </div>
-      )}
     </header>
   );
 }

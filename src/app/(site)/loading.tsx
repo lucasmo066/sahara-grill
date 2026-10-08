@@ -1,12 +1,17 @@
-
-
 export default function Loading() {
-    return (
-        <div className="flex flex-col justify-center items-center h-screen">
-            <div className="flex flex-col justify-center items-center">
-                <div className="animate-spin w-20 h-20 border-t-2 border-b-2 border-primary rounded-full"></div>
-                <p className="text-xl text-primary mt-5">Loading...</p>
-            </div>
-        </div>
-    );
+  return (
+    <main
+      id="main-content"
+      className="site-container section-space flex min-h-[60vh] flex-col items-center justify-center gap-6"
+      aria-busy="true"
+    >
+      <div
+        aria-hidden="true"
+        className="h-12 w-12 rounded-full border-2 border-border border-t-primary motion-safe:animate-spin"
+      />
+      <p role="status" className="text-lg text-muted-foreground">
+        Loading…
+      </p>
+    </main>
+  );
 }

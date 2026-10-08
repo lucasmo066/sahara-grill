@@ -1,16 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Aladin&display=swap');
-
 .aladin-regular {
-  font-family: "Aladin", system-ui;
+  font-family: var(--font-aladin), Georgia, serif;
   font-weight: 400;
   font-style: normal;
 }
 
 @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
+@tailwind components;
+@tailwind utilities;
 
-  
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -33,12 +30,13 @@
     --input: 240 5.9% 90%;
     --ring: 346.8 77.2% 49.8%;
     --radius: 0.75rem;
+    --heading: 348 73% 46%;
   }
 
   .dark {
-    --background: 20 14.3% 4.1%;
+    --background: 240 6% 10%;
     --foreground: 0 0% 95%;
-    --card: 24 9.8% 10%;
+    --card: 240 5% 13%;
     --card-foreground: 0 0% 95%;
     --popover: 0 0% 9%;
     --popover-foreground: 0 0% 95%;
@@ -52,17 +50,130 @@
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 85.7% 97.3%;
+    --heading: 350 90% 61%;
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 346.8 77.2% 49.8%;
   }
 }
 
-  @layer base {
-    * {
-      @apply border-border;
-    }
-    body {
-      @apply bg-background text-foreground;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  [id] {
+    @apply scroll-mt-28 md:scroll-mt-8;
+  }
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 4px;
+  }
+}
+
+@layer components {
+  .site-container {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  .section-space {
+    @apply py-12 sm:py-16 lg:py-20;
+  }
+  .section-heading {
+    font-family: var(--font-aladin), Georgia, serif;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    line-height: 1.08;
+    color: hsl(var(--heading));
+    text-wrap: balance;
+  }
+  .bento-card {
+    @apply flex min-w-0 flex-col gap-6 rounded-3xl border border-primary/40 bg-card p-5 pb-7 sm:p-6 lg:p-8;
+  }
+  .card-heading {
+    font-family: var(--font-aladin), Georgia, serif;
+    font-size: 3.25rem;
+    line-height: 1.08;
+    color: hsl(var(--heading));
+  }
+  @media (min-width: 640px) {
+    .card-heading {
+      font-size: clamp(3rem, 5vw, 5rem);
     }
   }
+  .card-media {
+    @apply w-full rounded-2xl object-cover;
+  }
+  .section-intro {
+    @apply mx-auto max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg;
+  }
+  .mobile-nav-glass {
+    background-color: rgb(255 255 255 / 16%);
+    border-color: rgb(255 255 255 / 55%);
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 45%),
+      0 12px 32px rgb(0 0 0 / 12%);
+    -webkit-backdrop-filter: blur(20px) saturate(1.5);
+    backdrop-filter: blur(20px) saturate(1.5);
+  }
+  .dark .mobile-nav-glass {
+    background-color: hsl(var(--background) / 38%);
+    border-color: rgb(255 255 255 / 15%);
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 12%),
+      0 12px 32px rgb(0 0 0 / 20%);
+  }
+  .blur-fade {
+    --reveal-x: 0px;
+    --reveal-y: 8px;
+  }
+  .blur-fade[data-direction="left"] {
+    --reveal-x: -8px;
+    --reveal-y: 0px;
+  }
+  .blur-fade[data-direction="right"] {
+    --reveal-x: 8px;
+    --reveal-y: 0px;
+  }
+  .blur-fade[data-direction="down"] {
+    --reveal-y: -8px;
+  }
+}
+
+@keyframes blur-fade-in {
+  from {
+    opacity: 0;
+    filter: blur(6px);
+    transform: translate(var(--reveal-x), var(--reveal-y));
+  }
+  to {
+    opacity: 1;
+    filter: none;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .blur-fade[data-revealed="false"]:not(:focus-within) {
+    opacity: 0;
+  }
+  .blur-fade[data-revealed="true"] {
+    animation: blur-fade-in var(--reveal-duration, 1.05s)
+      cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0.04s) backwards;
+  }
+  .blur-fade:focus-within {
+    opacity: 1;
+    animation: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

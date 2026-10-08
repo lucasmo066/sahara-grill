@@ -1,17 +1,14 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 
 export interface Testimonial {
-    quote: string;
-    name: string;
-    title: string;
-    }
+  quote: string;
+  name: string;
+  title: string;
+}
 
 export function InfiniteMovingCardsDemo() {
   return (
-    <div className="h-[25rem] w-full rounded-md flex flex-col antialiased bg-white dark:bg-neutral-950 dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+    <div className="w-full overflow-hidden">
       <InfiniteMovingCards
         items={testimonials}
         direction="right"
@@ -35,7 +32,8 @@ const testimonials = [
     title: "Yelp Review",
   },
   {
-    quote: "The food was great, but what was better was the people. Everyone that was working was so very accommodating and sweet. I really enjoyed eating here. So many regulars came in for dine in and take out and it was really great to see.",
+    quote:
+      "The food was great, but what was better was the people. Everyone that was working was so very accommodating and sweet. I really enjoyed eating here. So many regulars came in for dine in and take out and it was really great to see.",
     name: "Kristen T.",
     title: "Yelp Review",
   },

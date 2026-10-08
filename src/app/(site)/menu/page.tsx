@@ -1,25 +1,44 @@
+import type { Metadata } from "next";
 import MenuTabs from "@/components/menu/MenuTabs";
-import { getDrinksSections, getFoodSections } from "@/sanity/lib/menu";
+import MenuSections from "@/components/menu/MenuSections";
+import {
+  getDrinksSections,
+  getFoodSections,
+  getMenuPageSettings,
+} from "@/sanity/lib/menu";
+import { BlurFade } from "@/components/ui/blur-fade";
 
-export const revalidate = 60;
+export async function generateMetadata(): Promise<Metadata> {
+  const settings = await getMenuPageSettings();
+  return {
+    title: settings.seoTitle,
+    description: settings.seoDescription,
+  };
+}
 
 export default async function MenuPage() {
-  const [foodSections, drinksSections] = await Promise.all([
+  const [foodSections, drinksSections, settings] = await Promise.all([
     getFoodSections(),
     getDrinksSections(),
+    getMenuPageSettings(),
   ]);
 
   return (
-    <main className="flex min-h-screen flex-col py-16 px-10 md:px-24">
-      <h1 className="aladin-regular text-start text-6xl md:text-8xl lg:text-9xl font-medium mb-5 pb-4 bg-clip-text text-transparent bg-gradient-to-b from-red-600 to-red-950">
-        The Sahara Grill Menu
-      </h1>
-      <div className="flex flex-row items-center justify-center">
-        <MenuTabs
-          foodSections={foodSections}
-          drinksSections={drinksSections}
-        />
-      </div>
+    <main id="main-content" className="site-container section-space">
+      <BlurFade>
+        <h1 className="section-heading mb-8 sm:mb-10">{settings.heading}</h1>
+        {settings.intro ? (
+          <p className="mb-8 max-w-3xl text-base leading-relaxed text-muted-foreground sm:mb-10 sm:text-lg">
+            {settings.intro}
+          </p>
+        ) : null}
+      </BlurFade>
+      <MenuTabs
+        foodLabel={settings.foodTabLabel}
+        drinksLabel={settings.drinksTabLabel}
+        food={<MenuSections sections={foodSections} />}
+        drinks={<MenuSections sections={drinksSections} />}
+      />
     </main>
   );
 }
