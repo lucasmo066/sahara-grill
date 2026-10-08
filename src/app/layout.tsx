@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Aladin, Inter as FontSans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
   title: "The Sahara Grill",
@@ -35,6 +36,7 @@ export default function RootLayout({
         )}
       >
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
